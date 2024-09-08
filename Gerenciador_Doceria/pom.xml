@@ -8,15 +8,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>13</version>
+            <version>22</version>
         </dependency>
         
+
         
         <dependency>
             <groupId>org.controlsfx</groupId>
@@ -27,7 +27,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>13</version>
+            <version>22</version>
         </dependency>
     </dependencies>
     <build>
@@ -45,7 +45,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.4</version>
                 <configuration>
-                    <mainClass>com.mycompany.gerenciador_doceria.App</mainClass>
+                    <mainClass>com.mycompany.controller.Main</mainClass>
                 </configuration>
                 <executions>
                     <execution>
