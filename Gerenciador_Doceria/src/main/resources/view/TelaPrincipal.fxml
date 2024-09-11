@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -13,33 +18,59 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" style="-fx-background-color: #C0C0C0;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.controller.TelaPrincipalController">
    <top>
-      <HBox prefHeight="47.0" prefWidth="1300.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="47.0" prefWidth="1300.0" style="-fx-background-color: #FFE6FA;" BorderPane.alignment="CENTER">
          <children>
-            <Pane fx:id="PaneMenu" prefHeight="20.0" prefWidth="60.0" style="-fx-background-color: #FFF; -fx-border-color: #C0C0C0; -fx-border-width: 0px 0.8px 0px 0px;">
+            <Pane fx:id="PaneMenu" prefHeight="20.0" prefWidth="60.0" style="-fx-background-color: #FFE6FA; -fx-border-color: #C0C0C0; -fx-border-width: 0px 0.8px 0px 0px;">
                <children>
                   <Label fx:id="LabelMenu" alignment="CENTER" layoutX="10.0" layoutY="5.0" onMouseClicked="#abrirMenu" prefHeight="30.0" prefWidth="40.0">
                      <font>
                         <Font size="28.0" />
                      </font>
                      <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="42.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/mycompany/icons/menu-aberto.png" />
+                              <Image url="@../com/mycompany/icons/lateral%20bar.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Label>
                </children>
             </Pane>
+            <Label text="HOMEPAGE">
+               <HBox.margin>
+                  <Insets left="30.0" right="960.0" top="15.0" />
+               </HBox.margin>
+            </Label>
+            <Separator maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="42.0" prefWidth="10.0">
+               <HBox.margin>
+                  <Insets top="3.0" />
+               </HBox.margin>
+            </Separator>
+            <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets top="6.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@../com/mycompany/icons/calendar.png" />
+               </image>
+            </ImageView>
+            <Label text="30 March 2024">
+               <HBox.margin>
+                  <Insets top="11.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
    </top>
    <left>
-      <VBox fx:id="vBoxMenuLateral" prefHeight="200.0" prefWidth="120.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+      <VBox fx:id="vBoxMenuLateral" prefHeight="200.0" prefWidth="120.0" style="-fx-background-color: #FFE6FA;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../com/mycompany/icons/sombra-de-usuario-masculino.png" />
+                  <Image url="@../com/mycompany/icons/user.png" />
                </image>
                <VBox.margin>
                   <Insets left="27.0" top="80.0" />
@@ -70,9 +101,9 @@
                <children>
                   <Label text="INICIO">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/mycompany/icons/casa.png" />
+                              <Image url="@../com/mycompany/icons/home.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -88,9 +119,9 @@
                <children>
                   <Label text="CADASTROS">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/mycompany/icons/silhueta-de-multiplos-usuarios.png" />
+                              <Image url="@../com/mycompany/icons/cadstro.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -106,9 +137,9 @@
                <children>
                   <Label text="ESTOQUE">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/mycompany/icons/caixa-de-entrega.png" />
+                              <Image url="@../com/mycompany/icons/estoque.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -124,9 +155,9 @@
                <children>
                   <Label text="PEDIDOS">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/mycompany/icons/add-cart_876180.png" />
+                              <Image url="@../com/mycompany/icons/pedidos.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -142,9 +173,9 @@
                <children>
                   <Label text="ORÇAMENTO">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/mycompany/icons/price-list_5026565.png" />
+                              <Image url="@../com/mycompany/icons/orcamento.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -160,9 +191,9 @@
                <children>
                   <Label text="VENDAS">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/mycompany/icons/growth_798508%20(1).png" />
+                              <Image url="@../com/mycompany/icons/vendas.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -183,9 +214,9 @@
                <children>
                   <Label prefHeight="17.0" prefWidth="91.0" text="CONFIG">
                      <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../com/mycompany/icons/1564529_mechanism_options_settings_configuration_setting_icon.png" />
+                              <Image url="@../com/mycompany/icons/config.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -197,4 +228,146 @@
          </children>
       </VBox>
    </left>
+   <center>
+      <AnchorPane prefHeight="853.0" prefWidth="1186.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="14.0" layoutY="25.0" prefHeight="300.0" prefWidth="1080.0" style="-fx-background-color: #FFE6FA; -fx-background-radius: 30;" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <VBox layoutX="48.0" layoutY="48.0" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
+                     <children>
+                        <Label text="Pedidos Pendentes" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="24.5" top="12.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets left="50.0" top="20.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../com/mycompany/icons/pendind-order.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="40.0" text="2" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="85.0" top="6.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="306.0" layoutY="45.0" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
+                     <children>
+                        <Label text="Vendas Realizadas" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="27.5" top="12.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets left="50.0" top="20.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../com/mycompany/icons/sale.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="40.0" text="7" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="85.0" top="6.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="564.0" layoutY="45.0" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
+                     <children>
+                        <Label text="Pedidos Cancelados" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="21.0" top="12.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="110.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets left="50.0" top="20.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../com/mycompany/icons/canceled-order.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="40.0" text="1" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="85.0" top="6.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="822.0" layoutY="45.0" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
+                     <children>
+                        <Label text="Materiais em Estoque" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="13.5" top="12.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets left="45.0" top="17.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../com/mycompany/icons/products.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="40.0" text="543" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="85.0" top="2.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <Pane layoutX="40.0" layoutY="347.0" prefHeight="300.0" prefWidth="1105.0" style="-fx-background-color: #FFE6FA; -fx-background-radius: 30;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="410.0">
+               <children>
+                  <LineChart layoutX="48.0" layoutY="29.0" prefHeight="335.0" prefWidth="480.0" title="Lucro Mensal">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+                  <BarChart layoutX="576.0" layoutY="29.0" prefHeight="335.0" prefWidth="480.0" title="Lucro Anual">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>
