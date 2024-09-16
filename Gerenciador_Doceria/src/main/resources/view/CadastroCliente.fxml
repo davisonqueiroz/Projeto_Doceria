@@ -17,7 +17,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="853.0" prefWidth="1183.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="1183.0" style="-fx-background-color: #FFE6FA;" BorderPane.alignment="CENTER">
@@ -44,7 +43,7 @@
                      <children>
                         <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                            <HBox.margin>
-                              <Insets left="500.0" top="37.0" />
+                              <Insets left="20.0" top="37.0" />
                            </HBox.margin>
                            <image>
                               <Image url="@../com/mycompany/icons/search.png" />
@@ -70,29 +69,37 @@
                               <Insets left="12.0" top="33.0" />
                            </HBox.margin>
                         </ComboBox>
-                     </children>
-                  </HBox>
-                  <HBox maxHeight="-Infinity" maxWidth="1153.0" prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: #FFE6FA; -fx-border-color: #fff; -fx-border-width: 1px 0px 0px 0px;">
-                     <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <HBox.margin>
-                              <Insets left="10.0" right="10.0" top="16.0" />
+                              <Insets left="20.0" right="10.0" top="33.0" />
                            </HBox.margin>
                            <image>
                               <Image url="@../com/mycompany/icons/filter.png" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="  Adicionar filtro">
-                           <graphic>
-                              <Label text="+">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </Label>
-                           </graphic>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Filtros">
                            <HBox.margin>
-                              <Insets top="10.0" />
+                              <Insets top="28.0" />
                            </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" maxWidth="1153.0" prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: #FFE6FA; -fx-border-color: #fff; -fx-border-width: 1px 0px 0px 0px;">
+                     <children>
+                        <Button alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Adicionar">
+                           <HBox.margin>
+                              <Insets left="1038.0" top="10.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../com/mycompany/icons/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
                      </children>
                   </HBox>
