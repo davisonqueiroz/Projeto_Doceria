@@ -27,14 +27,13 @@ public class TelaPrincipalController implements Initializable {
     @FXML
     private Pane PaneMenu;
 
-    
     @FXML
     void abrirMenu(MouseEvent event) {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MenuLateral.fxml"));
             VBox menuLateral = loader.load();
-            
+
             MenuLateralController menuController = loader.getController();
             menuController.lockarTelaPrincipal(this);
 
@@ -62,20 +61,42 @@ public class TelaPrincipalController implements Initializable {
         }
 
     }
-    
-           public void setarCentro(String fxml){
-            
-               try {
-                   FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-                   AnchorPane telaSetada = loader.load();
-                   BorderPanePrincipal.setCenter(telaSetada);
-                   
-                   
-                   
-               } catch (Exception e) {
-                   e.printStackTrace();
-               }
+
+    public void setarCentro(String fxml) {
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+            AnchorPane telaSetada = loader.load();
+            BorderPanePrincipal.setCenter(telaSetada);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    }
+    
+    public void esconderMenuLateral(){
+        
+         try {
+             
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MenuLateral.fxml"));
+            VBox menuLateral = loader.load();
+
+
+            TranslateTransition painel = new TranslateTransition();
+            painel.setDuration(Duration.seconds(0.4));
+            painel.setNode(PaneMenu);
+            painel.setToX(0);
+            PaneMenu.setPrefWidth(PaneMenu.getWidth() - 55 );
+            PaneMenu.setTranslateX(+55);
+
+            painel.play();
+            
+            LabelMenu.setVisible(true);
+            BorderPanePrincipal.setLeft(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -83,13 +104,11 @@ public class TelaPrincipalController implements Initializable {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TelaInicio.fxml"));
             AnchorPane telaInicial = loader.load();
-            
+
             BorderPanePrincipal.setCenter(telaInicial);
 
         } catch (Exception e) {
         }
-        
- 
 
     }
 
