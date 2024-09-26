@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -66,7 +67,7 @@ public class TelaPrincipalController implements Initializable {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
-            AnchorPane telaSetada = loader.load();
+            Parent telaSetada = loader.load();
             BorderPanePrincipal.setCenter(telaSetada);
 
         } catch (Exception e) {
@@ -96,6 +97,19 @@ public class TelaPrincipalController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void telaFornecedor(){
+        
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/CadastroCliente.fxml"));
+            Parent cadastroCliente = loader.load();
+
+            MenuLateralController menuController = loader.getController();
+            menuController.lockarTelaPrincipal(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
     }
 
     @Override
