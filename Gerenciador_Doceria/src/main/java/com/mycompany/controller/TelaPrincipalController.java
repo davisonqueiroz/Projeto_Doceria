@@ -13,14 +13,36 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 public class TelaPrincipalController implements Initializable {
 
-    @FXML
+       @FXML
     private BorderPane BorderPanePrincipal;
+
+    @FXML
+    private HBox HBoxCadastros;
+
+    @FXML
+    private HBox HBoxConfig;
+
+    @FXML
+    private HBox HBoxEstoque;
+
+    @FXML
+    private HBox HBoxInicio;
+
+    @FXML
+    private HBox HBoxOrcamento;
+
+    @FXML
+    private HBox HBoxPedidos;
+
+    @FXML
+    private HBox HBoxVendas;
 
     @FXML
     private Label LabelMenu;
@@ -29,23 +51,23 @@ public class TelaPrincipalController implements Initializable {
     private Pane PaneMenu;
 
     @FXML
+    private VBox VBoxMenuLateral;
+    
+    @FXML
     void abrirMenu(MouseEvent event) {
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MenuLateral.fxml"));
-            VBox menuLateral = loader.load();
 
-            MenuLateralController menuController = loader.getController();
-            menuController.lockarTelaPrincipal(this);
+            BorderPanePrincipal.setLeft(VBoxMenuLateral);
 
-            BorderPanePrincipal.setLeft(menuLateral);
-
-            menuLateral.setTranslateX(-menuLateral.getWidth());
+            VBoxMenuLateral.setTranslateX(-120);
+            VBoxMenuLateral.setVisible(true);
 
             TranslateTransition menu = new TranslateTransition();
             menu.setDuration(Duration.seconds(0.4));
-            menu.setNode(menuLateral);
+            menu.setNode(VBoxMenuLateral);
             LabelMenu.setVisible(false);
+            VBoxMenuLateral.setPrefWidth(VBoxMenuLateral.getWidth());
             menu.setToX(0);
 
             TranslateTransition painel = new TranslateTransition();
@@ -74,42 +96,50 @@ public class TelaPrincipalController implements Initializable {
             e.printStackTrace();
         }
     }
-    
-    public void esconderMenuLateral(){
-        
-         try {
-             
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MenuLateral.fxml"));
-            VBox menuLateral = loader.load();
 
+    public void esconderMenuLateral() {
+
+        try {
 
             TranslateTransition painel = new TranslateTransition();
             painel.setDuration(Duration.seconds(0.4));
             painel.setNode(PaneMenu);
-            painel.setToX(0);
-            PaneMenu.setPrefWidth(PaneMenu.getWidth() - 55 );
-            PaneMenu.setTranslateX(+55);
+            painel.setToX(-60);
+            PaneMenu.setPrefWidth(PaneMenu.getWidth() - 55);
+            PaneMenu.setTranslateX(0);
+
+            TranslateTransition menu = new TranslateTransition();
+            painel.setDuration(Duration.seconds(0.4));
+            painel.setNode(VBoxMenuLateral);
+            painel.setToX(-120);
+
+            menu.setOnFinished(e -> {
+
+                VBoxMenuLateral.setVisible(false);
+                BorderPanePrincipal.setLeft(null);
+                LabelMenu.setVisible(true);
+            });
+
+            
 
             painel.play();
-            
-            LabelMenu.setVisible(true);
-            BorderPanePrincipal.setLeft(null);
+            menu.play();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public void telaFornecedor(){
-        
+
+    public void telaFornecedor() {
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/CadastroCliente.fxml"));
             Parent cadastroCliente = loader.load();
 
-            MenuLateralController menuController = loader.getController();
-            menuController.lockarTelaPrincipal(this);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }
 
     @Override
@@ -120,10 +150,96 @@ public class TelaPrincipalController implements Initializable {
             AnchorPane telaInicial = loader.load();
 
             BorderPanePrincipal.setCenter(telaInicial);
+            BorderPanePrincipal.setLeft(null);
 
         } catch (Exception e) {
         }
 
+    }
+
+    @FXML
+    void abrirTelaInicio(MouseEvent event) {
+
+        try {
+
+            setarCentro("/view/TelaInicio.fxml");
+            esconderMenuLateral();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void abrirTelaCadastros(MouseEvent event) {
+
+        try {
+
+            setarCentro("/view/TelaCadastros.fxml");
+            esconderMenuLateral();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void abrirTelaConfig(MouseEvent event) {
+
+        try {
+
+            setarCentro("/view/TelaInicio.fxml");
+            esconderMenuLateral();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void abrirTelaEstoque(MouseEvent event) {
+
+        try {
+
+            setarCentro("/view/TelaEstoque.fxml");
+            esconderMenuLateral();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void abrirTelaOrcamento(MouseEvent event) {
+
+        try {
+
+            setarCentro("/view/TelaInicio.fxml");
+            esconderMenuLateral();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void abrirTelaPedidos(MouseEvent event) {
+
+        try {
+
+            setarCentro("/view/TelaPedidos.fxml");
+            esconderMenuLateral();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void abrirTelaVendas(MouseEvent event) {
+
+        try {
+
+            setarCentro("/view/TelaVendas.fxml");
+            esconderMenuLateral();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
