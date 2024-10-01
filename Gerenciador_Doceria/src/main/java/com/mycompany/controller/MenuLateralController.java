@@ -46,6 +46,7 @@ public class MenuLateralController {
 
         try {
 
+
             telaPrincipalController.setarCentro("/view/TelaInicio.fxml");
             telaPrincipalController.esconderMenuLateral();
         } catch (Exception e) {
@@ -89,6 +90,7 @@ public class MenuLateralController {
             e.printStackTrace();
         }
     }
+    
 
     @FXML
     void abrirTelaOrcamento(MouseEvent event) {
@@ -119,7 +121,7 @@ public class MenuLateralController {
 
         try {
 
-            telaPrincipalController.setarCentro("/view/TelaInicio.fxml");
+            telaPrincipalController.setarCentro("/view/TelaVendas.fxml");
             telaPrincipalController.esconderMenuLateral();
         } catch (Exception e) {
             e.printStackTrace();
