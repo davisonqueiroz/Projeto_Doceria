@@ -13,8 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="853.0" prefWidth="1300.0" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.mycompany.controller.TelaPedidosController">
+<AnchorPane id="AnchorPane" prefHeight="853.0" prefWidth="1300.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.controller.TelaPedidosController">
    <children>
       <HBox layoutX="151.0" layoutY="115.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #FFE6FA;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
          <children>
@@ -46,7 +45,7 @@
                   <Insets top="27.0" />
                </HBox.margin>
             </ComboBox>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Novo Pedido">
+            <Button fx:id="BtnNvPedido" mnemonicParsing="false" onMouseClicked="#adicionarPedido" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Novo Pedido">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>

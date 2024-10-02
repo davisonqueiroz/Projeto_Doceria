@@ -27,12 +27,7 @@ import javafx.stage.Stage;
  */
 public class CadastrosController {
 
-    private TelaPrincipalController telaPrincipalController;
-
-    public void lockarTelaPrincipal(TelaPrincipalController controller) {
-
-        this.telaPrincipalController = controller;
-    }
+ 
 
     @FXML
     private Button ButtonAdicionarCliente;
