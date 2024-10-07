@@ -17,6 +17,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -26,8 +27,6 @@ import javafx.stage.Stage;
  * @author User
  */
 public class CadastrosController {
-
- 
 
     @FXML
     private Button ButtonAdicionarCliente;
@@ -91,21 +90,21 @@ public class CadastrosController {
         }
 
     }
-    
-        @FXML
+
+    @FXML
     void AbrirFormularioFornecedor(MouseEvent event) {
 
         try {
 
             Parent root = FXMLLoader.load(getClass().getResource("/view/CadastroFornecedor.fxml"));
-            Scene scene = new Scene(root,520,550);
+            Scene scene = new Scene(root, 520, 550);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }
 
     @FXML
@@ -118,6 +117,8 @@ public class CadastrosController {
 
             VBoxClienteBarra.setVisible(false);
             VBoxFornecedorBarra.setVisible(true);
+            ButtonFornecedor.setStyle("-fx-background-color: #dc8fe8;");
+            ButtonCliente.setStyle("-fx-background-color: #DFBAE4;");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -133,6 +134,9 @@ public class CadastrosController {
 
         VBoxClienteBarra.setVisible(true);
         VBoxFornecedorBarra.setVisible(false);
+
+        ButtonFornecedor.setStyle("-fx-background-color: #DFBAE4;");
+        ButtonCliente.setStyle("-fx-background-color: #dc8fe8;");
 
     }
 
