@@ -18,7 +18,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="853.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.controller.CadastrosController">
    <children>
-      <HBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="1183.0" style="-fx-background-color: #FFE6FA;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox layoutX="10.0" layoutY="10.0" style="-fx-background-color: #FFE6FA;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button fx:id="ButtonCliente" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#abrirMenuCliente" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #dc8fe8; -fx-background-radius: 0; -fx-border-color: #fff; -fx-border-width: 1px 1px 0px 1px;" text="Clientes">
                <HBox.margin>
@@ -32,9 +32,9 @@
             </Button>
          </children>
       </HBox>
-      <VBox fx:id="VBoxClienteBarra" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1153.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
+      <VBox fx:id="VBoxClienteBarra" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
          <children>
-            <HBox prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFE6FA;">
+            <HBox style="-fx-background-color: #FFE6FA;">
                <children>
                   <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
@@ -74,19 +74,22 @@
                   </ImageView>
                   <Button fx:id="ButtonFiltroCliente" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Filtros">
                      <HBox.margin>
-                        <Insets top="28.0" />
+                        <Insets bottom="5.0" top="28.0" />
                      </HBox.margin>
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
                </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="1306.0" style="-fx-background-color: #FFE6FA; -fx-border-color: #fff; -fx-border-width: 1px 0px 0px 0px;">
+            <HBox style="-fx-background-color: #FFE6FA; -fx-border-color: #fff; -fx-border-width: 1px 0px 0px 0px;" VBox.vgrow="ALWAYS">
                <children>
-                  <Button fx:id="ButtonAdicionarCliente" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#abrirFormularioCliente" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Adicionar">
+                  <Button fx:id="ButtonAdicionarCliente" alignment="BOTTOM_CENTER" mnemonicParsing="false" onMouseClicked="#abrirFormularioCliente" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Adicionar" HBox.hgrow="ALWAYS">
                      <HBox.margin>
-                        <Insets left="1138.0" top="10.0" />
+                        <Insets bottom="10.0" left="1138.0" right="30.0" top="10.0" />
                      </HBox.margin>
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -100,7 +103,7 @@
             </HBox>
          </children>
       </VBox>
-      <Pane fx:id="PaneTabelaCliente" layoutX="24.0" layoutY="179.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="619.0" prefWidth="1153.0" style="-fx-background-color: #FFE6FA;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="215.0">
+      <Pane fx:id="PaneTabelaCliente" layoutX="24.0" layoutY="179.0" maxHeight="-Infinity" maxWidth="-Infinity" style="-fx-background-color: #FFE6FA;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="215.0">
          <children>
             <TableView fx:id="TableViewCliente" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="599.0" prefWidth="1250.0">
                <columns>
@@ -112,6 +115,9 @@
                </columns>
             </TableView>
          </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
       </Pane>
       <VBox fx:id="VBoxFornecedorBarra" layoutX="10.0" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1153.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
          <children>

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="BorderPanePrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.controller.TelaPrincipalController">
+<BorderPane fx:id="BorderPanePrincipal" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="900.0" prefWidth="1300.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.controller.TelaPrincipalController">
    <top>
       <HBox prefHeight="47.0" prefWidth="1300.0" style="-fx-background-color: #FFE6FA;" BorderPane.alignment="CENTER">
          <children>
@@ -155,6 +155,22 @@
                <VBox.margin>
                   <Insets bottom="5.0" />
                </VBox.margin>
+            </HBox>
+            <HBox fx:id="HBoxProdutos" alignment="CENTER_LEFT" onMouseClicked="#abrirTelaProdutos" prefHeight="42.0" prefWidth="200.0" style="-fx-border-color: #C0C0C0; -fx-border-width: 0px 0px 0px 2px;">
+               <children>
+                  <Label text="PRODUTOS">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../com/mycompany/icons/recipe.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
             </HBox>
             <HBox fx:id="HBoxPedidos" alignment="CENTER_LEFT" onMouseClicked="#abrirTelaPedidos" prefHeight="42.0" prefWidth="200.0" style="-fx-border-color: #C0C0C0; -fx-border-width: 0px 0px 0px 2px;">
                <children>

@@ -22,11 +22,14 @@ import javafx.util.Duration;
 
 public class TelaPrincipalController implements Initializable {
 
-       @FXML
+    @FXML
     private BorderPane BorderPanePrincipal;
 
     @FXML
     private HBox HBoxCadastros;
+
+    @FXML
+    private HBox HBoxProdutos;
 
     @FXML
     private HBox HBoxConfig;
@@ -54,7 +57,7 @@ public class TelaPrincipalController implements Initializable {
 
     @FXML
     private VBox VBoxMenuLateral;
-    
+
     @FXML
     void abrirMenu(MouseEvent event) {
 
@@ -121,8 +124,6 @@ public class TelaPrincipalController implements Initializable {
                 BorderPanePrincipal.setLeft(null);
                 LabelMenu.setVisible(true);
             });
-
-            
 
             painel.play();
             menu.play();
@@ -211,7 +212,7 @@ public class TelaPrincipalController implements Initializable {
     @FXML
     void abrirTelaOrcamento(MouseEvent event) {
 
-         try {
+        try {
 
             Parent root = FXMLLoader.load(getClass().getResource("/view/FormularioOrcamento.fxml"));
             Scene scene = new Scene(root, 700, 900);
@@ -245,6 +246,19 @@ public class TelaPrincipalController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void abrirTelaProdutos(MouseEvent event) {
+        
+        try {
+
+            setarCentro("/view/TelaProduto.fxml");
+            esconderMenuLateral();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

@@ -13,12 +13,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="853.0" prefWidth="1186.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="853.0" prefWidth="1186.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutX="53.0" layoutY="50.0" prefHeight="300.0" prefWidth="1080.0" style="-fx-background-color: #FFE6FA; -fx-background-radius: 30;">
+      <Pane layoutX="53.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="1080.0" style="-fx-background-color: #FFE6FA; -fx-background-radius: 30;">
          <children>
-            <VBox layoutX="48.0" layoutY="48.0" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
+            <VBox layoutX="48.0" layoutY="48.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
                <children>
                   <Label text="Pedidos Pendentes" textFill="WHITE">
                      <VBox.margin>
@@ -46,7 +45,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox layoutX="306.0" layoutY="45.0" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
+            <VBox layoutX="306.0" layoutY="45.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
                <children>
                   <Label text="Vendas Realizadas" textFill="WHITE">
                      <VBox.margin>
@@ -74,7 +73,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox layoutX="564.0" layoutY="45.0" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
+            <VBox layoutX="564.0" layoutY="45.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
                <children>
                   <Label text="Pedidos Cancelados" textFill="WHITE">
                      <VBox.margin>
@@ -102,7 +101,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox layoutX="822.0" layoutY="45.0" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
+            <VBox layoutX="822.0" layoutY="45.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 30;">
                <children>
                   <Label text="Materiais em Estoque" textFill="WHITE">
                      <VBox.margin>
@@ -142,9 +141,9 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Pane layoutX="53.0" layoutY="393.0" prefHeight="393.0" prefWidth="1080.0" style="-fx-background-color: #FFE6FA; -fx-background-radius: 30;">
+      <Pane layoutX="53.0" layoutY="393.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="393.0" prefWidth="1080.0" style="-fx-background-color: #FFE6FA; -fx-background-radius: 30;">
          <children>
-            <LineChart layoutX="36.25" layoutY="29.0" prefHeight="335.0" prefWidth="480.0" title="Lucro Mensal">
+            <LineChart layoutX="36.25" layoutY="29.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="335.0" prefWidth="480.0" title="Lucro Mensal">
                <xAxis>
                   <CategoryAxis side="BOTTOM" />
                </xAxis>
@@ -152,7 +151,7 @@
                   <NumberAxis side="LEFT" />
                </yAxis>
             </LineChart>
-            <BarChart layoutX="552.5" layoutY="29.0" prefHeight="335.0" prefWidth="480.0" title="Lucro Anual">
+            <BarChart layoutX="552.5" layoutY="29.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="335.0" prefWidth="480.0" title="Lucro Anual">
                <xAxis>
                   <CategoryAxis side="BOTTOM" />
                </xAxis>
