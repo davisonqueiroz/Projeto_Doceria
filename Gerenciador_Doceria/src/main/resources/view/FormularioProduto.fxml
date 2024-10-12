@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.controller.FormularioProdutoController">
+   <children>
+      <VBox layoutX="483.0" layoutY="170.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FFE6FA;" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Separator prefWidth="60.0">
+                     <HBox.margin>
+                        <Insets right="4.0" top="14.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Label text="Produto">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="502.0">
+                     <HBox.margin>
+                        <Insets left="4.0" top="14.0" />
+                     </HBox.margin>
+                  </Separator>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Label text="Nome do Produto: ">
+                     <HBox.margin>
+                        <Insets left="15.0" right="10.0" top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="TxtClienteOrcamento" prefHeight="25.0" prefWidth="298.0">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Label text="Valor: ">
+                     <HBox.margin>
+                        <Insets right="10.0" top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="TxtValUnitOrcamento1" prefHeight="25.0" prefWidth="119.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="70.0" prefWidth="200.0">
+               <children>
+                  <Separator prefWidth="60.0">
+                     <HBox.margin>
+                        <Insets right="4.0" top="25.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <Label text="Ingredientes">
+                     <HBox.margin>
+                        <Insets top="13.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="460.0">
+                     <HBox.margin>
+                        <Insets left="4.0" top="25.0" />
+                     </HBox.margin>
+                  </Separator>
+               </children>
+            </HBox>
+            <HBox fx:id="HBoxProdOrcamento" prefHeight="45.0" prefWidth="200.0">
+               <children>
+                  <Label text="Item: ">
+                     <HBox.margin>
+                        <Insets left="15.0" right="10.0" top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="TxtProdOrcamento" prefHeight="25.0" prefWidth="206.0" />
+                  <Label text="Quantidade: ">
+                     <HBox.margin>
+                        <Insets left="25.0" right="10.0" top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="TxtValUnitOrcamento" prefHeight="25.0" prefWidth="101.0">
+                     <HBox.margin>
+                        <Insets right="100.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <ImageView fx:id="imgViewAdicionarProd" fitHeight="28.0" fitWidth="28.0" onMouseClicked="#adicionarProduto" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../com/mycompany/icons/add.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgViewRemoverProd" fitHeight="28.0" fitWidth="28.0" layoutX="587.0" layoutY="10.0" onMouseClicked="#removerProduto" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../com/mycompany/icons/delete%20circle.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox layoutX="23.0" layoutY="780.0" prefHeight="50.0" prefWidth="369.0" style="-fx-background-color: #FFE6FA;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="780.0">
+         <children>
+            <Button fx:id="BtnLimparOrcamento" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Limpar">
+               <HBox.margin>
+                  <Insets left="220.0" top="30.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnSalvarOrcamento" mnemonicParsing="false" onMouseClicked="#salvarOrcamento" prefHeight="40.0" prefWidth="100.0" text="Salvar">
+               <HBox.margin>
+                  <Insets left="40.0" top="30.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
