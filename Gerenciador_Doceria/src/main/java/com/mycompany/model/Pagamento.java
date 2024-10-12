@@ -1,15 +1,17 @@
 
 package com.mycompany.model;
 
+import Enums.Forma_De_Pagamento;
+
 public class Pagamento {
     
     private int cod_Pagamento;
     private double valor_Total;
-    private String forma_Pagamento;
+    private Forma_De_Pagamento forma_Pagamento;
     private boolean parcelar;
     private int qtd_Parcelas;
 
-    public Pagamento(double valor_Total, String forma_Pagamento, boolean parcelar, int qtd_Parcelas) {
+    public Pagamento(double valor_Total, Forma_De_Pagamento forma_Pagamento, boolean parcelar, int qtd_Parcelas) {
         this.valor_Total = valor_Total;
         this.forma_Pagamento = forma_Pagamento;
         this.parcelar = parcelar;
@@ -32,11 +34,11 @@ public class Pagamento {
         this.valor_Total = valor_Total;
     }
 
-    public String getForma_Pagamento() {
+    public Forma_De_Pagamento getForma_Pagamento() {
         return forma_Pagamento;
     }
 
-    public void setForma_Pagamento(String forma_Pagamento) {
+    public void setForma_Pagamento(Forma_De_Pagamento forma_Pagamento) {
         this.forma_Pagamento = forma_Pagamento;
     }
 
@@ -55,7 +57,6 @@ public class Pagamento {
     public void setQtd_Parcelas(int qtd_Parcelas) {
         this.qtd_Parcelas = qtd_Parcelas;
     }
-    
-    
+
     
 }

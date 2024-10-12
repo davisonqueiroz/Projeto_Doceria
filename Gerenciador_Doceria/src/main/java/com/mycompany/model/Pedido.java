@@ -1,15 +1,17 @@
 
 package com.mycompany.model;
 
+import Enums.Status_Pedido;
+
 
 public class Pedido {
     
     private int cod_Pedido;
     private Cliente cod_Cliente;
-    private String status;
+    private Status_Pedido status;
     private Pagamento cod_Pagamento;
 
-    public Pedido(Cliente cod_Cliente, String status, Pagamento cod_Pagamento) {
+    public Pedido(Cliente cod_Cliente, Status_Pedido status, Pagamento cod_Pagamento) {
         this.cod_Cliente = cod_Cliente;
         this.status = status;
         this.cod_Pagamento = cod_Pagamento;
@@ -31,11 +33,11 @@ public class Pedido {
         this.cod_Cliente = cod_Cliente;
     }
 
-    public String getStatus() {
+    public Status_Pedido getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status_Pedido status) {
         this.status = status;
     }
 
@@ -47,6 +49,5 @@ public class Pedido {
         this.cod_Pagamento = cod_Pagamento;
     }
 
-    
-    
+   
 }

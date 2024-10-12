@@ -1,14 +1,16 @@
 
 package com.mycompany.model;
 
+import Enums.Tipo_Contato;
+
 
 public class Telefone {
     
     private int cod_Telefone;
     private String numero_Tel;
-    private String tipo_Contato;
+    private Tipo_Contato tipo_Contato;
 
-    public Telefone(String numero_Tel, String tipo_Contato) {
+    public Telefone(String numero_Tel, Tipo_Contato tipo_Contato) {
         this.numero_Tel = numero_Tel;
         this.tipo_Contato = tipo_Contato;
     }
@@ -29,13 +31,13 @@ public class Telefone {
         this.numero_Tel = numero_Tel;
     }
 
-    public String getTipo_Contato() {
+    public Tipo_Contato getTipo_Contato() {
         return tipo_Contato;
     }
 
-    public void setTipo_Contato(String tipo_Contato) {
+    public void setTipo_Contato(Tipo_Contato tipo_Contato) {
         this.tipo_Contato = tipo_Contato;
     }
-    
+
     
 }
