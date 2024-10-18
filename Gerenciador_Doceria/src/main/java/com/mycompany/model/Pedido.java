@@ -2,19 +2,49 @@
 package com.mycompany.model;
 
 import Enums.Status_Pedido;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+import java.util.ArrayList;
+import java.util.List;
 
-
+@Entity
 public class Pedido {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cod_Pedido;
-    private Cliente cod_Cliente;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
+    
     private Status_Pedido status;
-    private Pagamento cod_Pagamento;
+    
+    @OneToOne
+    @JoinColumn(name = "id_pagamento")
+    private Pagamento pagamento;
+    
+    
+    @ManyToMany
+    @JoinTable(name = "item_Pedido",
+            joinColumns = @JoinColumn(name = "id_pedido"),
+            inverseJoinColumns = @JoinColumn(name = "id_produto"))
+    private List<Produto> produtos = new ArrayList();
 
-    public Pedido(Cliente cod_Cliente, Status_Pedido status, Pagamento cod_Pagamento) {
-        this.cod_Cliente = cod_Cliente;
+    public Pedido() {
+    }
+
+    public Pedido(Cliente cliente, Status_Pedido status, Pagamento pagamento) {
+        this.cliente = cliente;
         this.status = status;
-        this.cod_Pagamento = cod_Pagamento;
+        this.pagamento = pagamento;
     }
 
     public int getCod_Pedido() {
@@ -25,12 +55,12 @@ public class Pedido {
         this.cod_Pedido = cod_Pedido;
     }
 
-    public Cliente getCod_Cliente() {
-        return cod_Cliente;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setCod_Cliente(Cliente cod_Cliente) {
-        this.cod_Cliente = cod_Cliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Status_Pedido getStatus() {
@@ -41,13 +71,22 @@ public class Pedido {
         this.status = status;
     }
 
-    public Pagamento getCod_Pagamento() {
-        return cod_Pagamento;
+    public Pagamento getPagamento() {
+        return pagamento;
     }
 
-    public void setCod_Pagamento(Pagamento cod_Pagamento) {
-        this.cod_Pagamento = cod_Pagamento;
+    public void setPagamento(Pagamento pagamento) {
+        this.pagamento = pagamento;
     }
 
-   
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
+    
+ 
 }

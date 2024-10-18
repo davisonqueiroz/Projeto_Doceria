@@ -2,17 +2,34 @@
 package com.mycompany.model;
 
 import Enums.Tipo_Contato;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
-
-public class Telefone {
+@Entity
+public class TelefoneCliente {
     
+     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cod_Telefone;
     private String numero_Tel;
     private Tipo_Contato tipo_Contato;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
 
-    public Telefone(String numero_Tel, Tipo_Contato tipo_Contato) {
+    public TelefoneCliente() {
+    }
+
+    public TelefoneCliente(String numero_Tel, Tipo_Contato tipo_Contato, Cliente cliente) {
         this.numero_Tel = numero_Tel;
         this.tipo_Contato = tipo_Contato;
+        this.cliente = cliente;
     }
 
     public int getCod_Telefone() {
@@ -39,5 +56,13 @@ public class Telefone {
         this.tipo_Contato = tipo_Contato;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+    
     
 }

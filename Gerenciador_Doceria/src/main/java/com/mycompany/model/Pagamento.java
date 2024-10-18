@@ -2,20 +2,36 @@
 package com.mycompany.model;
 
 import Enums.Forma_De_Pagamento;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
+@Entity
 public class Pagamento {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cod_Pagamento;
     private double valor_Total;
     private Forma_De_Pagamento forma_Pagamento;
     private boolean parcelar;
     private int qtd_Parcelas;
+   
+    @OneToOne(mappedBy = "pagamento")
+    private Pedido pedido;
 
-    public Pagamento(double valor_Total, Forma_De_Pagamento forma_Pagamento, boolean parcelar, int qtd_Parcelas) {
+    public Pagamento() {
+    }
+
+    public Pagamento(double valor_Total, Forma_De_Pagamento forma_Pagamento, boolean parcelar, int qtd_Parcelas, Pedido pedido) {
         this.valor_Total = valor_Total;
         this.forma_Pagamento = forma_Pagamento;
         this.parcelar = parcelar;
         this.qtd_Parcelas = qtd_Parcelas;
+        this.pedido = pedido;
     }
 
     public int getCod_Pagamento() {
@@ -58,5 +74,13 @@ public class Pagamento {
         this.qtd_Parcelas = qtd_Parcelas;
     }
 
-    
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
+   
 }

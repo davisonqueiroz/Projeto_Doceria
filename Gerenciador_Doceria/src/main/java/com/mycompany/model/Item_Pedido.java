@@ -1,33 +1,47 @@
 
 package com.mycompany.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import java.util.ArrayList;
+import java.util.List;
 
+@Entity
 public class Item_Pedido {
     
-    private Pedido cod_Pedido;
-    private Produto cod_Produto;
+    @ManyToOne
+    @JoinColumn(name = "id_pedido")
+    private Pedido pedido;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_produto")
+    private Produto produto;
     private int quantidade;
 
-    public Item_Pedido(Pedido cod_Pedido, Produto cod_Produto, int quantidade) {
-        this.cod_Pedido = cod_Pedido;
-        this.cod_Produto = cod_Produto;
+    public Item_Pedido() {
+    }
+
+    public Item_Pedido(Pedido pedido, Produto produto, int quantidade) {
+        this.pedido = pedido;
+        this.produto = produto;
         this.quantidade = quantidade;
     }
 
-    public Pedido getCod_Pedido() {
-        return cod_Pedido;
+    public Pedido getPedido() {
+        return pedido;
     }
 
-    public void setCod_Pedido(Pedido cod_Pedido) {
-        this.cod_Pedido = cod_Pedido;
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 
-    public Produto getCod_Produto() {
-        return cod_Produto;
+    public Produto getProduto() {
+        return produto;
     }
 
-    public void setCod_Produto(Produto cod_Produto) {
-        this.cod_Produto = cod_Produto;
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
 
     public int getQuantidade() {
@@ -37,6 +51,8 @@ public class Item_Pedido {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
+
+
     
     
     

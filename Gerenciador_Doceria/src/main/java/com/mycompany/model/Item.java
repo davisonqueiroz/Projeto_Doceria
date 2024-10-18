@@ -1,19 +1,41 @@
 
 package com.mycompany.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import java.util.ArrayList;
+import java.util.List;
+
+
+@Entity
 public class Item {
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cod_Item;
     private String nome_Item;
     private String marca;
-    private Lote cod_Lote;
+    
+    @ManyToMany(mappedBy = "itens")
+    List<Produto> produtos = new ArrayList();
+    
+    @ManyToOne
+    @JoinColumn(name = "id_lote" )
+    private Lote lote;
     private int quantidade;
     private double valor_unitario;
 
-    public Item(String nome_Item, String marca, Lote cod_Lote, int quantidade, double valor_unitario) {
+    public Item() {
+    }
+
+    public Item(String nome_Item, String marca, Lote lote, int quantidade, double valor_unitario) {
         this.nome_Item = nome_Item;
         this.marca = marca;
-        this.cod_Lote = cod_Lote;
+        this.lote = lote;
         this.quantidade = quantidade;
         this.valor_unitario = valor_unitario;
     }
@@ -42,12 +64,20 @@ public class Item {
         this.marca = marca;
     }
 
-    public Lote getCod_Lote() {
-        return cod_Lote;
+    public List<Produto> getProdutos() {
+        return produtos;
     }
 
-    public void setCod_Lote(Lote cod_Lote) {
-        this.cod_Lote = cod_Lote;
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
+    public Lote getLote() {
+        return lote;
+    }
+
+    public void setLote(Lote lote) {
+        this.lote = lote;
     }
 
     public int getQuantidade() {
@@ -67,5 +97,6 @@ public class Item {
     }
     
     
-    
+
+  
 }

@@ -2,11 +2,18 @@
 package com.mycompany.model;
 
 import Enums.Unidade_Da_Federacao;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-
+@Entity
 public class Endereço {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cod_Endereco;
+    
     private String rua;
     private String cidade;
     private Unidade_Da_Federacao UF;
