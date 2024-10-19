@@ -2,43 +2,48 @@
 package com.mycompany.model;
 
 import Enums.Status_Pedido;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "pedido")
 public class Pedido {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cod_Pedido;
+    @Column(name = "id_pedido")
+    private int id_Pedido;
     
     @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
     
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status_pedido")
     private Status_Pedido status;
     
     @OneToOne
     @JoinColumn(name = "id_pagamento")
     private Pagamento pagamento;
     
+    @OneToMany(mappedBy = "pedido")
+    private List<Item_Pedido> itensPedido = new ArrayList();
     
-    @ManyToMany
-    @JoinTable(name = "item_Pedido",
-            joinColumns = @JoinColumn(name = "id_pedido"),
-            inverseJoinColumns = @JoinColumn(name = "id_produto"))
-    private List<Produto> produtos = new ArrayList();
 
     public Pedido() {
+        
     }
 
     public Pedido(Cliente cliente, Status_Pedido status, Pagamento pagamento) {
@@ -47,12 +52,12 @@ public class Pedido {
         this.pagamento = pagamento;
     }
 
-    public int getCod_Pedido() {
-        return cod_Pedido;
+    public int getId_Pedido() {
+        return id_Pedido;
     }
 
-    public void setCod_Pedido(int cod_Pedido) {
-        this.cod_Pedido = cod_Pedido;
+    public void setId_Pedido(int id_Pedido) {
+        this.id_Pedido = id_Pedido;
     }
 
     public Cliente getCliente() {
@@ -79,14 +84,14 @@ public class Pedido {
         this.pagamento = pagamento;
     }
 
-    public List<Produto> getProdutos() {
-        return produtos;
+    public List<Item_Pedido> getItensPedido() {
+        return itensPedido;
     }
 
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
+    public void setItensPedido(List<Item_Pedido> itensPedido) {
+        this.itensPedido = itensPedido;
     }
 
-    
+ 
  
 }

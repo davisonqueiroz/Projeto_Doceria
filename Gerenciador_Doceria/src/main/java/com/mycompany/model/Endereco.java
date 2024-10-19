@@ -2,24 +2,36 @@
 package com.mycompany.model;
 
 import Enums.Unidade_Da_Federacao;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-public class Endereço {
+@Table(name = "endereco" )
+public class Endereco {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cod_Endereco;
+    @Column(name = "id_endereco")
+    private int id_Endereco;
     
     private String rua;
     private String cidade;
+    @Enumerated(EnumType.STRING)
     private Unidade_Da_Federacao UF;
     private String CEP;
 
-    public Endereço(String rua, String cidade, Unidade_Da_Federacao UF, String CEP) {
+    public Endereco() {
+        
+    }
+
+    
+    public Endereco(String rua, String cidade, Unidade_Da_Federacao UF, String CEP) {
         this.rua = rua;
         this.cidade = cidade;
         this.UF = UF;
@@ -27,11 +39,11 @@ public class Endereço {
     }
 
     public int getCod_Endereco() {
-        return cod_Endereco;
+        return id_Endereco;
     }
 
     public void setCod_Endereco(int cod_Endereco) {
-        this.cod_Endereco = cod_Endereco;
+        this.id_Endereco = cod_Endereco;
     }
 
     public String getRua() {

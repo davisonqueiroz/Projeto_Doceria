@@ -1,39 +1,51 @@
 
 package com.mycompany.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "item_pedido")
 public class Item_Pedido {
     
-    @ManyToOne
-    @JoinColumn(name = "id_pedido")
-    private Pedido pedido;
+    @Embedded
+    private ProdutoPedidoId id;
     
     @ManyToOne
-    @JoinColumn(name = "id_produto")
+    @MapsId("produtoId")
+    @JoinColumn(name = "idProduto")
     private Produto produto;
+    
+    @ManyToOne
+    @MapsId("pedidoId")
+    @JoinColumn(name = "idPedido")
+    private Pedido pedido;
+    
+    @Column(name = "qtd_itemPedido")
     private int quantidade;
 
     public Item_Pedido() {
+        
     }
 
-    public Item_Pedido(Pedido pedido, Produto produto, int quantidade) {
-        this.pedido = pedido;
+    public Item_Pedido(ProdutoPedidoId id, Produto produto, Pedido pedido, int quantidade) {
+        this.id = id;
         this.produto = produto;
+        this.pedido = pedido;
         this.quantidade = quantidade;
     }
 
-    public Pedido getPedido() {
-        return pedido;
+    public ProdutoPedidoId getId() {
+        return id;
     }
 
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+    public void setId(ProdutoPedidoId id) {
+        this.id = id;
     }
 
     public Produto getProduto() {
@@ -44,6 +56,14 @@ public class Item_Pedido {
         this.produto = produto;
     }
 
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
     public int getQuantidade() {
         return quantidade;
     }
@@ -51,9 +71,6 @@ public class Item_Pedido {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
-
-
     
-    
-    
+     
 }

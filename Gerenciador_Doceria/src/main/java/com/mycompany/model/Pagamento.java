@@ -2,28 +2,42 @@
 package com.mycompany.model;
 
 import Enums.Forma_De_Pagamento;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "pagamento")
 public class Pagamento {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cod_Pagamento;
+    @Column(name = "id_pagamento")
+    private int id_Pagamento;
+    
+    @Column(name = "valorTot_pgt")
     private double valor_Total;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(name = "forma_pagamento")
     private Forma_De_Pagamento forma_Pagamento;
+    
     private boolean parcelar;
+    
+    @Column(name = "qtd_parcelas",nullable = true)
     private int qtd_Parcelas;
    
     @OneToOne(mappedBy = "pagamento")
     private Pedido pedido;
 
     public Pagamento() {
+        
     }
 
     public Pagamento(double valor_Total, Forma_De_Pagamento forma_Pagamento, boolean parcelar, int qtd_Parcelas, Pedido pedido) {
@@ -35,11 +49,11 @@ public class Pagamento {
     }
 
     public int getCod_Pagamento() {
-        return cod_Pagamento;
+        return id_Pagamento;
     }
 
     public void setCod_Pagamento(int cod_Pagamento) {
-        this.cod_Pagamento = cod_Pagamento;
+        this.id_Pagamento = cod_Pagamento;
     }
 
     public double getValor_Total() {

@@ -1,19 +1,24 @@
 
 package com.mycompany.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "email_cliente")
 public class EmailCliente {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cod_Email;
+    @Column(name = "id_cliente_email")
+    private int id_Email;
+    @Column(name = "end_email")
     private String email;
     
     @ManyToOne
@@ -21,6 +26,7 @@ public class EmailCliente {
     private Cliente cliente;
 
     public EmailCliente() {
+        
     }
 
     public EmailCliente(String email, Cliente cliente) {
@@ -29,11 +35,11 @@ public class EmailCliente {
     }
 
     public int getCod_Email() {
-        return cod_Email;
+        return id_Email;
     }
 
     public void setCod_Email(int cod_Email) {
-        this.cod_Email = cod_Email;
+        this.id_Email = cod_Email;
     }
 
     public String getEmail() {

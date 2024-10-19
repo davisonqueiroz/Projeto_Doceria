@@ -1,21 +1,25 @@
 
 package com.mycompany.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "cliente")
 public class Cliente {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cod_Cliente;
+    @Column(name = "id_cliente")
+    private int id_Cliente;
+    @Column(name = "nome_cliente")
     private String nome;
     
     @OneToMany(mappedBy = "cliente")
@@ -28,6 +32,7 @@ public class Cliente {
     private List<Pedido> pedidos = new ArrayList();
 
     public Cliente() {
+        
     }
 
     public Cliente(String nome) {
@@ -37,11 +42,11 @@ public class Cliente {
     
 
     public int getCod_Cliente() {
-        return cod_Cliente;
+        return id_Cliente;
     }
 
     public void setCod_Cliente(int cod_Cliente) {
-        this.cod_Cliente = cod_Cliente;
+        this.id_Cliente = cod_Cliente;
     }
 
     public String getNome() {

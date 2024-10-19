@@ -1,44 +1,34 @@
-<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
-                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
-             version="2.2">
-    
-    <persistence-unit name="DoceriaPU" transaction-type="RESOURCE_LOCAL">
-            
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        
-        <!-- Lista de Entidades-->
-        <class>com.mycompany.model.Cliente</class>
-        <class>com.mycompany.model.EmailCliente</class>
-        <class>com.mycompany.model.TelefoneCliente</class>
-        <class>com.mycompany.model.Endereço</class> 
-        <class>com.mycompany.model.Fornecedor</class>
-        <class>com.mycompany.model.EmailFornecedor</class>
-        <class>com.mycompany.model.TelefoneFornecedor</class>
-        <class>com.mycompany.model.Fornecedor_Item</class>
-        <class>com.mycompany.model.Item</class>
-        <class>com.mycompany.model.Item_Pedido</class>
-        <class>com.mycompany.model.Lote</class>
-        <class>com.mycompany.model.Pagamento</class>
-        <class>com.mycompany.model.Pedido</class>
-        <class>com.mycompany.model.Produto</class>
-        <class>com.mycompany.model.Receita</class>
-        
-        
-        <properties>
-            <!--Config do banco --> 
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Doceria_Manager"/>
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="root"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            
-            <!--Especificacoes do Hibernate -->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="update"/> 
-            <property name="hibernate.show_sql" value="true"/> 
-            <property name="hibernate.format_sql" value="true"/> 
-        </properties>
-    </persistence-unit>
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence                                  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <persistence-unit name="DoceriaPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <!-- Lista de Entidades-->
+    <class>com.mycompany.model.Cliente</class>
+    <class>com.mycompany.model.EmailCliente</class>
+    <class>com.mycompany.model.TelefoneCliente</class>
+    <class>com.mycompany.model.Endereço</class>
+    <class>com.mycompany.model.Fornecedor</class>
+    <class>com.mycompany.model.EmailFornecedor</class>
+    <class>com.mycompany.model.TelefoneFornecedor</class>
+    <class>com.mycompany.model.Fornecedor_Item</class>
+    <class>com.mycompany.model.Item</class>
+    <class>com.mycompany.model.Item_Pedido</class>
+    <class>com.mycompany.model.Lote</class>
+    <class>com.mycompany.model.Pagamento</class>
+    <class>com.mycompany.model.Pedido</class>
+    <class>com.mycompany.model.Produto</class>
+    <class>com.mycompany.model.Receita</class>
+    <properties>
+      <!--Config do banco -->
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Doceria_Manager"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <!--Especificacoes do Hibernate -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+    </properties>
+  </persistence-unit>
 </persistence>
-
