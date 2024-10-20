@@ -41,6 +41,8 @@ import java.awt.Color;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -55,7 +57,7 @@ public class FormularioOrcamentoController implements Initializable {
     private Button BtnLimparOrcamento;
 
     @FXML
-    private ComboBox<Integer> ComboBoxQtdOrcamento;
+    private TextField TextFieldQtdOrcamento;
 
     @FXML
     private HBox HBoxProdOrcamento;
@@ -68,6 +70,9 @@ public class FormularioOrcamentoController implements Initializable {
 
     @FXML
     private TextField TxtProdOrcamento;
+    
+    @FXML
+    private Label LabelDataOrc;
 
     @FXML
     private TextField TxtTelOrcamento;
@@ -90,8 +95,7 @@ public class FormularioOrcamentoController implements Initializable {
     @FXML
     private ToggleGroup Desconto;
 
-    @FXML
-    private DatePicker dtDataOrcamento;
+
 
     @FXML
     private ImageView imgViewAdicionarProd;
@@ -110,9 +114,14 @@ public class FormularioOrcamentoController implements Initializable {
     List<HBox> boxes = new ArrayList();
     List<TextField> nomeProd = new ArrayList();
     List<TextField> valProd = new ArrayList();
-    List<ComboBox<Integer>> qtdProd = new ArrayList();
+    List<TextField> qtdProd = new ArrayList();
     List<ImageView> imgAdd = new ArrayList();
     List<ImageView> imgDelete = new ArrayList();
+    
+    private LocalDate dtAtual = LocalDate.now();
+    private DateTimeFormatter formatacao = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    String dtFormatada = dtAtual.format(formatacao);
+    
 
     Document docPDF = new Document();
 
@@ -141,8 +150,7 @@ public class FormularioOrcamentoController implements Initializable {
         TextField nvProd = new TextField();
         nomeProd.add(nvProd);
         Label quant = new Label("Quantidade: ");
-        ComboBox qtd = new ComboBox<Integer>();
-        qtd.setItems(qtdsProds);
+        TextField qtd = new TextField();
         qtd.setPromptText("0");
         qtdProd.add(qtd);
         Label valor = new Label("Valor Unit.: ");
@@ -251,7 +259,7 @@ public class FormularioOrcamentoController implements Initializable {
 
         for (int i = 0; i < qtdProd.size(); i++) {
 
-            quantidade = qtdProd.get(i).getSelectionModel().getSelectedItem();
+            quantidade = Integer.parseInt(qtdProd.get(i).getText());
             valorProdAtual = Double.parseDouble(valProd.get(i).getText());
             soma += (quantidade * valorProdAtual);
         }
@@ -267,15 +275,18 @@ public class FormularioOrcamentoController implements Initializable {
         btnRadioSim.setOnAction(event -> mostrarTxtDesc());
         btnRadioNao.setOnAction(event -> esconderTxtDesc());
 
-        ComboBoxQtdOrcamento.setItems(qtdsProds);
-        ComboBoxQtdOrcamento.setPromptText("0");
 
         boxes.add(HBoxProdOrcamento);
         nomeProd.add(TxtProdOrcamento);
         valProd.add(TxtValUnitOrcamento);
-        qtdProd.add(ComboBoxQtdOrcamento);
+        qtdProd.add(TextFieldQtdOrcamento);
         imgAdd.add(imgViewAdicionarProd);
         imgDelete.add(imgViewRemoverProd);
+        
+        LabelDataOrc.setText(dtFormatada);
+        
+
+
 
     }
 

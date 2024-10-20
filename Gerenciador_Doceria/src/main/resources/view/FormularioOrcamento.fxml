@@ -2,8 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
@@ -65,11 +63,11 @@
                         <Insets left="15.0" right="10.0" top="4.0" />
                      </HBox.margin>
                   </Label>
-                  <DatePicker fx:id="dtDataOrcamento" prefHeight="25.0" prefWidth="111.0">
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </DatePicker>
+                  <Label fx:id="LabelDataOrc" alignment="TOP_LEFT" prefHeight="28.0" prefWidth="85.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="40.0" prefWidth="200.0">
@@ -107,7 +105,7 @@
                         <Insets left="25.0" right="10.0" top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox fx:id="ComboBoxQtdOrcamento" prefHeight="25.0" prefWidth="85.0" />
+                  <TextField fx:id="TextFieldQtdOrcamento" prefHeight="25.0" prefWidth="63.0" />
                   <Label text="Valor Unit.:">
                      <HBox.margin>
                         <Insets left="25.0" right="10.0" top="3.0" />

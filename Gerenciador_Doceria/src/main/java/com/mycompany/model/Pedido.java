@@ -14,6 +14,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,16 +42,22 @@ public class Pedido {
     @OneToMany(mappedBy = "pedido")
     private List<Item_Pedido> itensPedido = new ArrayList();
     
+    @Column(nullable = true)
+    private LocalDate data_entrega;
+    
 
     public Pedido() {
         
     }
 
-    public Pedido(Cliente cliente, Status_Pedido status, Pagamento pagamento) {
+    public Pedido(Cliente cliente, Status_Pedido status, Pagamento pagamento, LocalDate data_entrega) {
         this.cliente = cliente;
         this.status = status;
         this.pagamento = pagamento;
+        this.data_entrega = data_entrega;
     }
+
+    
 
     public int getId_Pedido() {
         return id_Pedido;
@@ -90,6 +97,14 @@ public class Pedido {
 
     public void setItensPedido(List<Item_Pedido> itensPedido) {
         this.itensPedido = itensPedido;
+    }
+
+    public LocalDate getData_entrega() {
+        return data_entrega;
+    }
+
+    public void setData_entrega(LocalDate data_entrega) {
+        this.data_entrega = data_entrega;
     }
 
  

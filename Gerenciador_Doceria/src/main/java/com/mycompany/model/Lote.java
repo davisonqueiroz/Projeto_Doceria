@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,7 +22,7 @@ public class Lote {
     @Column(name = "id_lote")
     private int id_Lote;
     @Column(name = "dt_vencimento")
-    private Date data_Vencimento;
+    private LocalDate data_Vencimento;
     
     @OneToMany(mappedBy = "lote")
     private List<Item> itens = new ArrayList();
@@ -30,9 +31,11 @@ public class Lote {
         
     }
 
-    public Lote(Date data_Vencimento) {
+    public Lote(LocalDate data_Vencimento) {
         this.data_Vencimento = data_Vencimento;
     }
+
+
 
     public int getCod_Lote() {
         return id_Lote;
@@ -42,13 +45,23 @@ public class Lote {
         this.id_Lote = cod_Lote;
     }
 
-    public Date getData_Vencimento() {
+    public int getId_Lote() {
+        return id_Lote;
+    }
+
+    public void setId_Lote(int id_Lote) {
+        this.id_Lote = id_Lote;
+    }
+
+    public LocalDate getData_Vencimento() {
         return data_Vencimento;
     }
 
-    public void setData_Vencimento(Date data_Vencimento) {
+    public void setData_Vencimento(LocalDate data_Vencimento) {
         this.data_Vencimento = data_Vencimento;
     }
+
+    
 
     public List<Item> getItens() {
         return itens;

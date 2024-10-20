@@ -165,7 +165,7 @@ public class GeradorPDF {
 
     }
 
-    public void tabelaProdutos(List<TextField> nomeProd, List<ComboBox<Integer>> qtdProd, List<TextField> valProd, Label lblValorTot) {
+    public void tabelaProdutos(List<TextField> nomeProd, List<TextField> qtdProd, List<TextField> valProd, Label lblValorTot) {
 
         try {
 
@@ -195,7 +195,7 @@ public class GeradorPDF {
             for (int i = 0; i < qtdProd.size(); i++) {//for-each para percorrer a lista de produtos e copular a tabela     
 
                 PdfPCell nomeprod = new PdfPCell(new Phrase(nomeProd.get(i).getText(), celulas));
-                PdfPCell qtdprod = new PdfPCell(new Phrase(String.valueOf(qtdProd.get(i).getSelectionModel().getSelectedItem()), celulas));
+                PdfPCell qtdprod = new PdfPCell(new Phrase(String.valueOf(qtdProd.get(i).getText()), celulas));
                 PdfPCell valprod = new PdfPCell(new Phrase(String.valueOf(valProd.get(i).getText()), celulas));
 
                 //fixando altura das celulas
@@ -257,7 +257,7 @@ public class GeradorPDF {
         }
     }
 
-    public void salvarPDF(TextField txtCliente, TextField telefone, List<TextField> nomeProd, List<ComboBox<Integer>> qtdProd,
+    public void salvarPDF(TextField txtCliente, TextField telefone, List<TextField> nomeProd, List<TextField> qtdProd,
             List<TextField> valProd, Label lblValorTot, Stage stage) {
 
         FileChooser salvar = new FileChooser();
