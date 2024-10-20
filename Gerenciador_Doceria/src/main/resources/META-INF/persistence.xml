@@ -5,19 +5,19 @@
     <!-- Lista de Entidades-->
     <class>com.mycompany.model.Cliente</class>
     <class>com.mycompany.model.EmailCliente</class>
-    <class>com.mycompany.model.TelefoneCliente</class>
-    <class>com.mycompany.model.Endereço</class>
-    <class>com.mycompany.model.Fornecedor</class>
     <class>com.mycompany.model.EmailFornecedor</class>
-    <class>com.mycompany.model.TelefoneFornecedor</class>
-    <class>com.mycompany.model.Fornecedor_Item</class>
+    <class>com.mycompany.model.Endereco</class>
+    <class>com.mycompany.model.Fornecedor</class>
     <class>com.mycompany.model.Item</class>
+    <class>com.mycompany.model.Item_Fornecido</class>
     <class>com.mycompany.model.Item_Pedido</class>
     <class>com.mycompany.model.Lote</class>
     <class>com.mycompany.model.Pagamento</class>
     <class>com.mycompany.model.Pedido</class>
     <class>com.mycompany.model.Produto</class>
     <class>com.mycompany.model.Receita</class>
+    <class>com.mycompany.model.TelefoneCliente</class>
+    <class>com.mycompany.model.TelefoneFornecedor</class>
     <properties>
       <!--Config do banco -->
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Doceria_Manager"/>
