@@ -79,7 +79,7 @@ public class TelaPrincipalController implements Initializable {
             painel.setDuration(Duration.seconds(0.4));
             painel.setNode(PaneMenu);
             painel.setToX(0);
-            PaneMenu.setPrefWidth(PaneMenu.getWidth() + 60);
+            PaneMenu.setPrefWidth(PaneMenu.getWidth() +60);
             PaneMenu.setTranslateX(-60);
 
             painel.play();
