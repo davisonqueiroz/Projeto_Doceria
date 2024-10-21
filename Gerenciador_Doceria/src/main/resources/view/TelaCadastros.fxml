@@ -10,196 +10,240 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="853.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.controller.CadastrosController">
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="853.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.controller.CadastrosController">
    <children>
-      <HBox layoutX="10.0" layoutY="10.0" style="-fx-background-color: #FFE6FA;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="VBoxCliente" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="853.0" prefWidth="1300.0" visible="false">
          <children>
-            <Button fx:id="ButtonCliente" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#abrirMenuCliente" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #dc8fe8; -fx-background-radius: 0; -fx-border-color: #fff; -fx-border-width: 1px 1px 0px 1px;" text="Clientes">
-               <HBox.margin>
-                  <Insets left="10.0" top="15.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="ButtonFornecedor" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#abrirMenuFornecedor" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 0; -fx-border-color: #fff; -fx-border-width: 1px 1px 0px 1px;" text="Fornecedores">
-               <HBox.margin>
-                  <Insets top="15.0" />
-               </HBox.margin>
-            </Button>
-         </children>
-      </HBox>
-      <VBox fx:id="VBoxClienteBarra" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
-         <children>
-            <HBox style="-fx-background-color: #FFE6FA;">
+            <HBox alignment="BOTTOM_LEFT" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #FFE6FA;" VBox.vgrow="ALWAYS">
                <children>
-                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                  <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #dc8fe8; -fx-background-radius: 0; -fx-border-color: #fff; -fx-border-width: 1px 1px 0px 1px;" text="Clientes" HBox.hgrow="ALWAYS">
                      <HBox.margin>
-                        <Insets left="20.0" top="37.0" />
+                        <Insets left="10.0" top="20.0" />
                      </HBox.margin>
-                     <image>
-                        <Image url="@../com/mycompany/icons/search.png" />
-                     </image>
-                  </ImageView>
-                  <TextField fx:id="TextFieldCliente" prefHeight="25.0" prefWidth="294.0" promptText="  Pesquisa rapida">
+                  </Button>
+                  <Button fx:id="ButtonFornecedor" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#abrirMenuFornecedor" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 0; -fx-border-color: #fff; -fx-border-width: 1px 1px 0px 1px;" text="Fornecedores" HBox.hgrow="ALWAYS">
                      <HBox.margin>
-                        <Insets right="20.0" top="35.0" />
+                        <Insets />
                      </HBox.margin>
-                  </TextField>
-                  <Separator maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="30.0">
-                     <HBox.margin>
-                        <Insets top="33.0" />
-                     </HBox.margin>
-                  </Separator>
-                  <Label text="Ordenar por: ">
-                     <HBox.margin>
-                        <Insets left="20.0" top="35.0" />
-                     </HBox.margin>
-                  </Label>
-                  <ComboBox fx:id="ComboBoxCliente" prefWidth="150.0">
-                     <HBox.margin>
-                        <Insets left="12.0" top="33.0" />
-                     </HBox.margin>
-                  </ComboBox>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <HBox.margin>
-                        <Insets left="20.0" right="10.0" top="33.0" />
-                     </HBox.margin>
-                     <image>
-                        <Image url="@../com/mycompany/icons/filter.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="ButtonFiltroCliente" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Filtros">
-                     <HBox.margin>
-                        <Insets bottom="5.0" top="28.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
                   </Button>
                </children>
                <VBox.margin>
                   <Insets />
                </VBox.margin>
             </HBox>
-            <HBox style="-fx-background-color: #FFE6FA; -fx-border-color: #fff; -fx-border-width: 1px 0px 0px 0px;" VBox.vgrow="ALWAYS">
+            <VBox fx:id="VBoxClienteBarra" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
                <children>
-                  <Button fx:id="ButtonAdicionarCliente" alignment="BOTTOM_CENTER" mnemonicParsing="false" onMouseClicked="#abrirFormularioCliente" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Adicionar" HBox.hgrow="ALWAYS">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="1138.0" right="30.0" top="10.0" />
-                     </HBox.margin>
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #FFE6FA;" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="22.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="11.0" left="20.0" right="10.0" top="30.0" />
+                           </HBox.margin>
                            <image>
-                              <Image url="@../com/mycompany/icons/add.png" />
+                              <Image url="@../com/mycompany/icons/search.png" />
                            </image>
                         </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-      <Pane fx:id="PaneTabelaCliente" layoutX="24.0" layoutY="179.0" maxHeight="-Infinity" maxWidth="-Infinity" style="-fx-background-color: #FFE6FA;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="215.0">
-         <children>
-            <TableView fx:id="TableViewCliente" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="599.0" prefWidth="1250.0">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="ID" />
-                  <TableColumn prefWidth="221.0" text="Nome" />
-                  <TableColumn minWidth="0.0" prefWidth="54.0" text="Sexo" />
-                  <TableColumn prefWidth="343.0" text="Endereco" />
-                  <TableColumn prefWidth="438.0" text="Telefone" />
-               </columns>
-            </TableView>
-         </children>
-         <padding>
-            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-         </padding>
-      </Pane>
-      <VBox fx:id="VBoxFornecedorBarra" layoutX="10.0" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1153.0" visible="false" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
-         <children>
-            <HBox prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #FFE6FA;">
-               <children>
-                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                     <HBox.margin>
-                        <Insets left="20.0" top="37.0" />
-                     </HBox.margin>
-                     <image>
-                        <Image url="@../com/mycompany/icons/search.png" />
-                     </image>
-                  </ImageView>
-                  <TextField fx:id="TextFieldFornecedor" prefHeight="25.0" prefWidth="294.0" promptText="  Pesquisa rapida">
-                     <HBox.margin>
-                        <Insets right="20.0" top="35.0" />
-                     </HBox.margin>
-                  </TextField>
-                  <Separator maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="30.0">
-                     <HBox.margin>
-                        <Insets top="33.0" />
-                     </HBox.margin>
-                  </Separator>
-                  <Label text="Ordenar por: ">
-                     <HBox.margin>
-                        <Insets left="20.0" top="35.0" />
-                     </HBox.margin>
-                  </Label>
-                  <ComboBox fx:id="ComboBoxFornecedor" prefWidth="150.0">
-                     <HBox.margin>
-                        <Insets left="12.0" top="33.0" />
-                     </HBox.margin>
-                  </ComboBox>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <HBox.margin>
-                        <Insets left="20.0" right="10.0" top="33.0" />
-                     </HBox.margin>
-                     <image>
-                        <Image url="@../com/mycompany/icons/filter.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="ButtonFiltroFornecedor" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Filtros">
-                     <HBox.margin>
-                        <Insets top="28.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="65.0" prefWidth="1306.0" style="-fx-background-color: #FFE6FA; -fx-border-color: #fff; -fx-border-width: 1px 0px 0px 0px;">
-               <children>
-                  <Button fx:id="ButtonAdicionarFornecedor" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#AbrirFormularioFornecedor" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Adicionar">
-                     <HBox.margin>
-                        <Insets left="1138.0" top="10.0" />
-                     </HBox.margin>
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <TextField fx:id="TextFieldCliente" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="30.0" promptText="  Pesquisa rapida" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="8.0" right="20.0" top="28.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Separator maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="30.0" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="8.0" top="30.0" />
+                           </HBox.margin>
+                        </Separator>
+                        <Label text="Ordenar por: " HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="ComboBoxCliente" prefWidth="150.0" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="12.0" top="23.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="20.0" right="10.0" top="24.0" />
+                           </HBox.margin>
                            <image>
-                              <Image url="@../com/mycompany/icons/add.png" />
+                              <Image url="@../com/mycompany/icons/filter.png" />
                            </image>
                         </ImageView>
-                     </graphic>
-                  </Button>
+                        <Button fx:id="ButtonFiltroCliente" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Filtros" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="8.0" right="300.0" top="25.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #FFE6FA; -fx-border-color: #fff; -fx-border-width: 1px 0px 0px 0px;" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="ButtonAdicionarCliente" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#abrirFormularioCliente" prefHeight="36.0" prefWidth="105.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Adicionar" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="16.0" right="30.0" top="16.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../com/mycompany/icons/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
-            </HBox>
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="10.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="623.0" prefWidth="0.0" style="-fx-background-color: #FFE6FA;" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                  <TableView fx:id="TableViewCliente" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="599.0" prefWidth="1250.0" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="ID" />
+                        <TableColumn prefWidth="221.0" text="Nome" />
+                        <TableColumn minWidth="0.0" prefWidth="54.0" text="Sexo" />
+                        <TableColumn prefWidth="343.0" text="Endereco" />
+                        <TableColumn prefWidth="438.0" text="Telefone" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="10.0" right="15.0" top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
          </children>
       </VBox>
-      <Pane fx:id="PaneFornecedorTabela" layoutX="34.0" layoutY="189.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="619.0" prefWidth="1153.0" style="-fx-background-color: #FFE6FA;" visible="false" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="215.0">
+      <VBox fx:id="VBoxFornecedor" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="853.0" prefWidth="1300.0">
          <children>
-            <TableView fx:id="TableViewFornecedor" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="599.0" prefWidth="1250.0">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="ID" />
-                  <TableColumn prefWidth="221.0" text="Nome" />
-                  <TableColumn minWidth="0.0" prefWidth="54.0" text="Sexo" />
-                  <TableColumn prefWidth="343.0" text="Endereco" />
-                  <TableColumn prefWidth="438.0" text="Telefone" />
-                  <TableColumn prefWidth="118.0" text="E-mail" />
-               </columns>
-            </TableView>
+            <HBox alignment="BOTTOM_LEFT" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #FFE6FA;" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="ButtonCliente" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#abrirMenuCliente" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #DFBAE4; -fx-background-radius: 0; -fx-border-color: #fff; -fx-border-width: 1px 1px 0px 1px;" text="Clientes" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #dc8fe8; -fx-background-radius: 0; -fx-border-color: #fff; -fx-border-width: 1px 1px 0px 1px;" text="Fornecedores" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <VBox fx:id="VBoxClienteBarra1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #FFE6FA;" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="22.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="11.0" left="20.0" right="10.0" top="30.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../com/mycompany/icons/search.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="TextFieldFornecedor" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="30.0" promptText="  Pesquisa rapida" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="8.0" right="20.0" top="28.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Separator maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="30.0" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="8.0" top="30.0" />
+                           </HBox.margin>
+                        </Separator>
+                        <Label text="Ordenar por: " HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="ComboBoxFornecedor" prefWidth="150.0" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="12.0" top="23.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="20.0" right="10.0" top="24.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../com/mycompany/icons/filter.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="ButtonFiltroFornecedor" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Filtros" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="8.0" right="300.0" top="25.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #FFE6FA; -fx-border-color: #fff; -fx-border-width: 1px 0px 0px 0px;" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="ButtonAdicionarFornecedor" alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#AbrirFormularioFornecedor" prefHeight="36.0" prefWidth="105.0" style="-fx-background-color: #DFBAE4; -fx-border-color: #fff;" text="Adicionar" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="16.0" right="30.0" top="16.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../com/mycompany/icons/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="10.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="623.0" prefWidth="0.0" style="-fx-background-color: #FFE6FA;" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                  <TableView fx:id="TableViewFornecedor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="599.0" prefWidth="1250.0" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn prefWidth="75.0" text="ID" />
+                        <TableColumn prefWidth="221.0" text="Nome" />
+                        <TableColumn minWidth="0.0" prefWidth="54.0" text="Sexo" />
+                        <TableColumn prefWidth="343.0" text="Endereco" />
+                        <TableColumn prefWidth="438.0" text="Telefone" />
+                     </columns>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
          </children>
-      </Pane>
+      </VBox>
    </children>
-</AnchorPane>
+</StackPane>

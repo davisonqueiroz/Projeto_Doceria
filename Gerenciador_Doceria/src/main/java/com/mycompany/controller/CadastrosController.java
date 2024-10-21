@@ -28,14 +28,14 @@ import javafx.stage.Stage;
  */
 public class CadastrosController {
 
-    @FXML
+     @FXML
     private Button ButtonAdicionarCliente;
 
     @FXML
     private Button ButtonAdicionarFornecedor;
 
     @FXML
-    private Button ButtonCliente;
+    private Button ButtonCliente1;
 
     @FXML
     private Button ButtonFiltroCliente;
@@ -53,12 +53,6 @@ public class CadastrosController {
     private ComboBox<?> ComboBoxFornecedor;
 
     @FXML
-    private Pane PaneFornecedorTabela;
-
-    @FXML
-    private Pane PaneTabelaCliente;
-
-    @FXML
     private TableView<?> TableViewCliente;
 
     @FXML
@@ -71,10 +65,17 @@ public class CadastrosController {
     private TextField TextFieldFornecedor;
 
     @FXML
+    private VBox VBoxCliente;
+
+    @FXML
     private VBox VBoxClienteBarra;
 
     @FXML
-    private VBox VBoxFornecedorBarra;
+    private VBox VBoxClienteBarra1;
+
+    @FXML
+    private VBox VBoxFornecedor;
+
 
     @FXML
     void abrirFormularioCliente(MouseEvent event) {
@@ -107,36 +108,20 @@ public class CadastrosController {
 
     }
 
-    @FXML
-    void abrirMenuFornecedor(MouseEvent event) {
-
-        try {
-
-            PaneTabelaCliente.setVisible(false);
-            PaneFornecedorTabela.setVisible(true);
-
-            VBoxClienteBarra.setVisible(false);
-            VBoxFornecedorBarra.setVisible(true);
-            ButtonFornecedor.setStyle("-fx-background-color: #dc8fe8;");
-            ButtonCliente.setStyle("-fx-background-color: #DFBAE4;");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+     @FXML
+    void abrirMenuCliente(MouseEvent event) {
+        
+        VBoxCliente.setVisible(true);
+        VBoxFornecedor.setVisible(false);
 
     }
 
     @FXML
-    void abrirMenuCliente(MouseEvent event) {
+    void abrirMenuFornecedor(MouseEvent event) {
+        
+        VBoxCliente.setVisible(false);
+        VBoxFornecedor.setVisible(true);
 
-        PaneTabelaCliente.setVisible(true);
-        PaneFornecedorTabela.setVisible(false);
-
-        VBoxClienteBarra.setVisible(true);
-        VBoxFornecedorBarra.setVisible(false);
-
-        ButtonFornecedor.setStyle("-fx-background-color: #DFBAE4;");
-        ButtonCliente.setStyle("-fx-background-color: #dc8fe8;");
 
     }
 
