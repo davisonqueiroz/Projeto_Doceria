@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -35,8 +36,13 @@ public class TelaPedidosController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/view/CadastroPedido.fxml"));
             Scene scene = new Scene(root, 700, 900);
             Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.requestFocus();
             stage.setScene(scene);
-            stage.show();
+            stage.showAndWait();
+            stage.centerOnScreen();
+            
         } catch (Exception e) {
             e.printStackTrace();
         }

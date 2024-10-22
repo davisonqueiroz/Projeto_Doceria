@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -22,27 +23,33 @@ import javafx.stage.Stage;
  */
 public class TelaEstoqueController implements Initializable {
 
-     @FXML
+    @FXML
     private Button ButtonAdicionarItem;
 
     @FXML
     void abrirFormularioItem(MouseEvent event) {
-        
+
         try {
 
             Parent root = FXMLLoader.load(getClass().getResource("/view/FormularioCadastroItem.fxml"));
             Scene scene = new Scene(root, 550, 600);
             Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.requestFocus();
             stage.setScene(scene);
-            stage.show();
+            stage.showAndWait();
+            stage.centerOnScreen();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }

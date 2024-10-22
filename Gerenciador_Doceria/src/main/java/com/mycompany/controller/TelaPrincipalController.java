@@ -17,6 +17,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -150,10 +151,15 @@ public class TelaPrincipalController implements Initializable {
         try {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TelaInicio.fxml"));
-            AnchorPane telaInicial = loader.load();
+            Parent telaInicial = loader.load();
 
             BorderPanePrincipal.setCenter(telaInicial);
             BorderPanePrincipal.setLeft(null);
+            
+            
+            
+           Stage stage = (Stage) BorderPanePrincipal.getScene().getWindow();
+           stage.centerOnScreen();
 
         } catch (Exception e) {
         }
@@ -217,8 +223,12 @@ public class TelaPrincipalController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/view/FormularioOrcamento.fxml"));
             Scene scene = new Scene(root, 700, 900);
             Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.requestFocus();
             stage.setScene(scene);
-            stage.show();
+            stage.showAndWait();
+            stage.centerOnScreen();
         } catch (Exception e) {
             e.printStackTrace();
         }

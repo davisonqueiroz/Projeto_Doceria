@@ -20,6 +20,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -84,8 +85,13 @@ public class CadastrosController {
             Parent root = FXMLLoader.load(getClass().getResource("/view/CadastroCliente.fxml"));
             Scene scene = new Scene(root, 600, 687);
             Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.requestFocus();
             stage.setScene(scene);
-            stage.show();
+            stage.showAndWait();
+            stage.centerOnScreen();
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -100,10 +106,15 @@ public class CadastrosController {
             Parent root = FXMLLoader.load(getClass().getResource("/view/CadastroFornecedor.fxml"));
             Scene scene = new Scene(root, 520, 550);
             Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.requestFocus();
             stage.setScene(scene);
-            stage.show();
+            stage.showAndWait();
+            stage.centerOnScreen();
         } catch (Exception e) {
             e.printStackTrace();
+            
         }
 
     }
