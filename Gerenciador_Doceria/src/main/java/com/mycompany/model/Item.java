@@ -27,8 +27,8 @@ public class Item {
     
     private String marca;
     
-    @ManyToMany(mappedBy = "itens")
-    List<Produto> produtos = new ArrayList();
+    //@ManyToMany(mappedBy = "itens")
+    //List<Produto> produtos = new ArrayList();
     
     @ManyToOne
     @JoinColumn(name = "id_lote" )
@@ -80,13 +80,7 @@ public class Item {
         this.marca = marca;
     }
 
-    public List<Produto> getProdutos() {
-        return produtos;
-    }
 
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
-    }
 
     public Lote getLote() {
         return lote;

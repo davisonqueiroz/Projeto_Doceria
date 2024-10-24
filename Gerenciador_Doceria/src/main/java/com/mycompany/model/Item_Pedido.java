@@ -2,7 +2,7 @@
 package com.mycompany.model;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 @Table(name = "item_pedido")
 public class Item_Pedido {
     
-    @Embedded
+    @EmbeddedId
     private ProdutoPedidoId id;
     
     @ManyToOne

@@ -7,9 +7,9 @@ import java.io.Serializable;
 @Embeddable
 public class ItemProdutoId implements Serializable{
     
-    private int itemId;
+    public int itemId;
     
-    private int produtoId;
+    public int produtoId;
 
     public int getItemId() {
         return itemId;

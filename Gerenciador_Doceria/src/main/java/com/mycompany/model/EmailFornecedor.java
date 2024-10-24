@@ -35,12 +35,12 @@ public class EmailFornecedor {
         this.fornecedor = fornecedor;
     }
 
-    public int getCod_Email() {
+    public int getId_Email() {
         return id_Email;
     }
 
-    public void setCod_Email(int cod_Email) {
-        this.id_Email = cod_Email;
+    public void setId_Email(int id_Email) {
+        this.id_Email = id_Email;
     }
 
     public String getEmail() {
@@ -58,6 +58,6 @@ public class EmailFornecedor {
     public void setFornecedor(Fornecedor fornecedor) {
         this.fornecedor = fornecedor;
     }
-    
-                                    
+
+                              
 }

@@ -89,7 +89,7 @@ public class CadastrosController {
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.requestFocus();
             stage.setScene(scene);
-            stage.showAndWait();
+            stage.show();
             stage.centerOnScreen();
             
         } catch (Exception e) {

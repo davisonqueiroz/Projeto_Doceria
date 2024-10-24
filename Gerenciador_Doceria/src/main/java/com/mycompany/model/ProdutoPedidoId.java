@@ -8,8 +8,8 @@ import java.io.Serializable;
 @Embeddable
 public class ProdutoPedidoId implements Serializable{
     
-    private int produtoId;
-    private int pedidoId;
+    public int produtoId;
+    public int pedidoId;
 
     public int getProdutoId() {
         return produtoId;
