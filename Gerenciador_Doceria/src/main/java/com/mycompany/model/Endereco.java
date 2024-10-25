@@ -53,6 +53,16 @@ public class Endereco {
 
     }
 
+    public Endereco(String CEP, String logradouro, String complemento, String bairro, String localidade, Unidade_Da_Federacao UF) {
+        this.CEP = CEP;
+        this.logradouro = logradouro;
+        this.complemento = complemento;
+        this.bairro = bairro;
+        this.localidade = localidade;
+        this.UF = UF;
+    }
+    
+
     public Endereco(String CEP, String logradouro, String complemento, String unidade, String bairro,
             String localidade, Unidade_Da_Federacao UF, String estado, String regiao, String ibge, 
             String gia, String ddd, String siafi) {
