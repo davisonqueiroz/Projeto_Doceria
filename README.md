@@ -1,12 +1,12 @@
 # 🧁 Gerenciador Doceria 🧁
 
-![JavaFX](https://img.shields.io/badge/javafx-%23FF0000.svg?style=for-the-badge&logo=javafx&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
+ ![JavaFX](https://img.shields.io/badge/javafx-%23FF0000.svg?style=for-the-badge&logo=javafx&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)  [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
 O **Gerenciador de Doceria** é uma aplicação desktop desenvolvida para o gerenciamento de docerias. Utilizando JavaFX, possui uma interface intuitiva e interativa, alem de geração de PDFs e tabelas no Excel.
 
-## Descrição
-Além da utilização de JavaFX para a interface gráfica, a aplicação também conta com uso de Hibernate para persistencia dos dados e gerenciamento de consultas e alterações no banco de dados e MySQL como gerenciador de banco de dados.
-Visando facilitação e interatividade do usuário, a aplicação conta com sub-menus para separar as janelas e oque cada uma gerencia diretamente. Sendo assim, possui listado os seguintes sub-menus e algumas de suas funcionalidades:
+## 🗒 Descrição
+Além da utilização de JavaFX para a interface gráfica, a aplicação também conta com uso de Hibernate para persistência dos dados e gerenciamento de consultas e alterações no banco de dados e MySQL como gerenciador de banco de dados.
+Visando facilitação e interatividade do usuário, a aplicação conta com abas em um menu lateral para separar as janelas e oque cada uma gerencia diretamente. Sendo assim, possui listado as seguintes abas e algumas de suas funcionalidades:
 
 - **INICIO** Possui informações simples como:
 	- Pedidos pendentes
@@ -27,7 +27,7 @@ Visando facilitação e interatividade do usuário, a aplicação conta com sub-
 	- Tabela
 	- Filtragem de dados
 	- Opção de edição/exclusão de itens
-- **PRODUTOS** Design simples, com informações de total de produtos cadastrados alem de:
+- **PRODUTOS** Design simples, com informações de total de produtos cadastrados além de:
 	- Botão para adição de produto
 	- Barra de pesquisa
 	- Filtragem de dados
@@ -37,19 +37,23 @@ Visando facilitação e interatividade do usuário, a aplicação conta com sub-
 	- Barra de pesquisa
 	- Filtragem de dados
 	- Detalhes sobre o pedido(produtos,quantidade,cliente,valor e status dos itens)
-	- Botão para gerar Orçamento
 - **VENDAS** Janela para controle financeiro,possuindo:
 	- Barra de pesquisa
 	- Filtragem
 	- Tabela com dados
 	- Botão para geração de relatórios
+ - **ORÇAMENTO** Formulário para preenchimento e geração de orçamento em PDF,incluindo:
+ 	- Campos editáveis
+  	- Botões para Salvar e Limpar
+   	- FileChooser após selecionar "Salvar" para nomear o arquivo e escolher onde será salvo
+   	- Criação dinamica de campo para adicionar/excluir produto 	    
 
 
 ## ⚠️ Projeto em desenvolvimento ⚠️
 
 Este projeto ainda está em fase de desenvolvimento, tendo algumas funcionalidades ja implementadas e funcionais, e outras ainda incompletas ou ainda em planejamento.
 
-## Funcionalidades
+## 📋 Funcionalidades
 
 - [x] Animação simples do menu lateral
 - [x] Redimensionamento responsivo
@@ -79,10 +83,10 @@ Este projeto ainda está em fase de desenvolvimento, tendo algumas funcionalidad
 - [ ] Dashboard com estatisticas de desempenho
 - [ ] Sistema de autenticação
 - [ ] Controle de dados
-- [ ] Persistencia de dados
+- [ ] Persistência de dados
 - [ ] API de busca de endereços
 
-## 🔨Ferramentas
+## 🔨 Ferramentas
 - [Java 22](https://docs.oracle.com/en/java/javase/22/)
 - [Maven](https://maven.apache.org/guides/index.html)
 - [JavaFX](https://www.oracle.com/java/technologies/javase/javafx-docs.html)
@@ -90,7 +94,7 @@ Este projeto ainda está em fase de desenvolvimento, tendo algumas funcionalidad
 - [MySQL](https://docs.oracle.com/cd/E17952_01/)
 - [OpenPDF](https://github.com/LibrePDF/OpenPDF)
 
-  ## Execução do projeto
+  ## ⚙ Execução do projeto
 
   Certifique-se de ter JDK 22 e Maven instalados, além do MySQL na versão 8.0 ou superior.
 1. Clone o repositório:
@@ -104,4 +108,7 @@ Este projeto ainda está em fase de desenvolvimento, tendo algumas funcionalidad
       <property name="javax.persistence.jdbc.user" value=usuario/>
       <property name="javax.persistence.jdbc.password" value=senha/>
      ```
-## Liçenca
+## 📃 Licença
+
+Este projeto é licenciado sob a MIT License - [LICENSE](https://github.com/davisonqueiroz/Projeto_Doceria/tree/main?tab=License-1-ov-file) para mais detalhes.
+Alem disso, utiliza da biblioteca OpenPDF, que é licenciada sob a LGPL (GNU Lesser General Public License). Para saber mais, vá ate [OpenPDF](https://github.com/LibrePDF/OpenPDF?tab=readme-ov-file).
