@@ -1,25 +1,22 @@
 package DAO;
 
 import Connection.ConnectFactory;
-import com.mycompany.model.Cliente;
+import com.mycompany.model.Produto;
 import jakarta.persistence.EntityManager;
 import java.util.List;
 
-public class ClienteDAO {
-
-    public ClienteDAO() {
-    }
+public class ProdutoDAO {
 
     private EntityManager em;
 
-    public void save(Cliente cliente) {
+    public void save(Produto produto) {
 
         em = new ConnectFactory().getConnect();
 
         try {
 
             em.getTransaction().begin();
-            em.persist(cliente);
+            em.persist(produto);
             em.getTransaction().commit();
 
         } catch (Exception e) {
@@ -32,15 +29,15 @@ public class ClienteDAO {
         }
     }
 
-    public void delete(int cod_Cliente) {
+    public void delete(int cod_Produto) {
 
         em = new ConnectFactory().getConnect();
 
         try {
 
-            Cliente cliente = em.find(Cliente.class, cod_Cliente);
+            Produto produto = em.find(Produto.class, cod_Produto);
             em.getTransaction().begin();
-            em.remove(cliente);
+            em.remove(produto);
             em.getTransaction().commit();
 
         } catch (Exception e) {
@@ -54,12 +51,12 @@ public class ClienteDAO {
 
     }
 
-    public List<Cliente> findByName(String nome) {
+    public List<Produto> findByName(String nome) {
 
         em = new ConnectFactory().getConnect();
-        List<Cliente> cliente = null;
+        List<Produto> produto = null;
         try {
-            cliente = em.createQuery("Cliente c where c.nome = :nome", Cliente.class).setParameter("nome", nome)
+            produto = em.createQuery("Produto pr where pr.nome_Produto = :nome", Produto.class).setParameter("nome", nome)
                     .getResultList();
 
         } catch (Exception e) {
@@ -69,16 +66,16 @@ public class ClienteDAO {
             em.close();
         }
 
-        return cliente;
+        return produto;
     }
 
-    public List<Cliente> findAll() {
+    public List<Produto> findAll() {
 
         em = new ConnectFactory().getConnect();
-        List<Cliente> clientes = null;
+        List<Produto> produtos = null;
 
         try {
-            clientes = em.createQuery("from Cliente").getResultList();
+            produtos = em.createQuery("from Produto").getResultList();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,17 +83,17 @@ public class ClienteDAO {
             em.close();
         }
 
-        return clientes;
+        return produtos;
     }
 
-    public void update(Cliente cliente) {
+    public void update(Produto produto) {
 
         em = new ConnectFactory().getConnect();
 
         try {
 
             em.getTransaction().begin();
-            em.merge(cliente);
+            em.merge(produto);
             em.getTransaction().commit();
 
         } catch (Exception e) {

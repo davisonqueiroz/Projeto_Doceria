@@ -1,25 +1,22 @@
 package DAO;
 
 import Connection.ConnectFactory;
-import com.mycompany.model.Cliente;
+import com.mycompany.model.EmailCliente;
 import jakarta.persistence.EntityManager;
 import java.util.List;
 
-public class ClienteDAO {
-
-    public ClienteDAO() {
-    }
+public class EmailClienteDAO {
 
     private EntityManager em;
 
-    public void save(Cliente cliente) {
+    public void save(EmailCliente emailCliente) {
 
         em = new ConnectFactory().getConnect();
 
         try {
 
             em.getTransaction().begin();
-            em.persist(cliente);
+            em.persist(emailCliente);
             em.getTransaction().commit();
 
         } catch (Exception e) {
@@ -32,15 +29,15 @@ public class ClienteDAO {
         }
     }
 
-    public void delete(int cod_Cliente) {
+    public void delete(int cod_EmailCliente) {
 
         em = new ConnectFactory().getConnect();
 
         try {
 
-            Cliente cliente = em.find(Cliente.class, cod_Cliente);
+            EmailCliente emailCliente = em.find(EmailCliente.class, cod_EmailCliente);
             em.getTransaction().begin();
-            em.remove(cliente);
+            em.remove(emailCliente);
             em.getTransaction().commit();
 
         } catch (Exception e) {
@@ -54,13 +51,12 @@ public class ClienteDAO {
 
     }
 
-    public List<Cliente> findByName(String nome) {
+    public EmailCliente findById(int id) {
 
         em = new ConnectFactory().getConnect();
-        List<Cliente> cliente = null;
+        EmailCliente emailCliente = null;
         try {
-            cliente = em.createQuery("Cliente c where c.nome = :nome", Cliente.class).setParameter("nome", nome)
-                    .getResultList();
+            emailCliente = em.find(EmailCliente.class, id);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,16 +65,16 @@ public class ClienteDAO {
             em.close();
         }
 
-        return cliente;
+        return emailCliente;
     }
 
-    public List<Cliente> findAll() {
+    public List<EmailCliente> findAll() {
 
         em = new ConnectFactory().getConnect();
-        List<Cliente> clientes = null;
+        List<EmailCliente> emailClientes = null;
 
         try {
-            clientes = em.createQuery("from Cliente").getResultList();
+            emailClientes = em.createQuery("from EmailCliente").getResultList();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,17 +82,17 @@ public class ClienteDAO {
             em.close();
         }
 
-        return clientes;
+        return emailClientes;
     }
 
-    public void update(Cliente cliente) {
+    public void update(EmailCliente emailCliente) {
 
         em = new ConnectFactory().getConnect();
 
         try {
 
             em.getTransaction().begin();
-            em.merge(cliente);
+            em.merge(emailCliente);
             em.getTransaction().commit();
 
         } catch (Exception e) {

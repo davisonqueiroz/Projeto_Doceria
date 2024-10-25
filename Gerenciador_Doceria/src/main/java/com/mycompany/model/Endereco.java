@@ -9,6 +9,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,6 +26,9 @@ public class Endereco {
     @Enumerated(EnumType.STRING)
     private Unidade_Da_Federacao UF;
     private String CEP;
+    
+    @OneToOne(mappedBy = "endereco")
+    private Cliente cliente;
 
     public Endereco() {
         

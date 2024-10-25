@@ -1,25 +1,22 @@
 package DAO;
 
 import Connection.ConnectFactory;
-import com.mycompany.model.Cliente;
+import com.mycompany.model.Lote;
 import jakarta.persistence.EntityManager;
 import java.util.List;
 
-public class ClienteDAO {
-
-    public ClienteDAO() {
-    }
+public class LoteDAO {
 
     private EntityManager em;
 
-    public void save(Cliente cliente) {
+    public void save(Lote lote) {
 
         em = new ConnectFactory().getConnect();
 
         try {
 
             em.getTransaction().begin();
-            em.persist(cliente);
+            em.persist(lote);
             em.getTransaction().commit();
 
         } catch (Exception e) {
@@ -32,15 +29,15 @@ public class ClienteDAO {
         }
     }
 
-    public void delete(int cod_Cliente) {
+    public void delete(int cod_Lote) {
 
         em = new ConnectFactory().getConnect();
 
         try {
 
-            Cliente cliente = em.find(Cliente.class, cod_Cliente);
+            Lote lote = em.find(Lote.class, cod_Lote);
             em.getTransaction().begin();
-            em.remove(cliente);
+            em.remove(lote);
             em.getTransaction().commit();
 
         } catch (Exception e) {
@@ -54,13 +51,12 @@ public class ClienteDAO {
 
     }
 
-    public List<Cliente> findByName(String nome) {
+    public Lote findById(int id) {
 
         em = new ConnectFactory().getConnect();
-        List<Cliente> cliente = null;
+        Lote lote = null;
         try {
-            cliente = em.createQuery("Cliente c where c.nome = :nome", Cliente.class).setParameter("nome", nome)
-                    .getResultList();
+            lote = em.find(Lote.class, id);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,16 +65,16 @@ public class ClienteDAO {
             em.close();
         }
 
-        return cliente;
+        return lote;
     }
 
-    public List<Cliente> findAll() {
+    public List<Lote> findAll() {
 
         em = new ConnectFactory().getConnect();
-        List<Cliente> clientes = null;
+        List<Lote> lotes = null;
 
         try {
-            clientes = em.createQuery("from Cliente").getResultList();
+            lotes = em.createQuery("from Lote").getResultList();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,17 +82,17 @@ public class ClienteDAO {
             em.close();
         }
 
-        return clientes;
+        return lotes;
     }
 
-    public void update(Cliente cliente) {
+    public void update(Lote lote) {
 
         em = new ConnectFactory().getConnect();
 
         try {
 
             em.getTransaction().begin();
-            em.merge(cliente);
+            em.merge(lote);
             em.getTransaction().commit();
 
         } catch (Exception e) {

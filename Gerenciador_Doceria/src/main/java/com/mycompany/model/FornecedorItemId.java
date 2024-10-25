@@ -8,8 +8,8 @@ import java.io.Serializable;
 @Embeddable
 public class FornecedorItemId implements Serializable{
     
-    public int fornecedorId;
-    public int itemId;
+    private int fornecedorId;
+    private int itemId;
 
     public int getFornecedorId() {
         return fornecedorId;
