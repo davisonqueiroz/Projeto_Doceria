@@ -94,7 +94,7 @@ Este projeto ainda está em fase de desenvolvimento, tendo algumas funcionalidad
 - [MySQL](https://docs.oracle.com/cd/E17952_01/)
 - [OpenPDF](https://github.com/LibrePDF/OpenPDF)
 
-  ## ⚙ Execução do projeto
+## ⚙ Execução do projeto
 
   Certifique-se de ter JDK 22 e Maven instalados, além do MySQL na versão 8.0 ou superior.
 1. Clone o repositório:
