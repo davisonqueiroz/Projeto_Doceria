@@ -35,16 +35,6 @@ public class Lote {
         this.data_Vencimento = data_Vencimento;
     }
 
-
-
-    public int getCod_Lote() {
-        return id_Lote;
-    }
-
-    public void setCod_Lote(int cod_Lote) {
-        this.id_Lote = cod_Lote;
-    }
-
     public int getId_Lote() {
         return id_Lote;
     }
@@ -61,8 +51,6 @@ public class Lote {
         this.data_Vencimento = data_Vencimento;
     }
 
-    
-
     public List<Item> getItens() {
         return itens;
     }
@@ -71,6 +59,6 @@ public class Lote {
         this.itens = itens;
     }
 
-  
-    
+
+
 }

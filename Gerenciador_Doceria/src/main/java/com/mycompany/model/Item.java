@@ -56,12 +56,12 @@ public class Item {
         this.valor_unitario = valor_unitario;
     }
 
-    public int getCod_Item() {
+    public int getId_Item() {
         return id_Item;
     }
 
-    public void setCod_Item(int cod_Item) {
-        this.id_Item = cod_Item;
+    public void setId_Item(int id_Item) {
+        this.id_Item = id_Item;
     }
 
     public String getNome_Item() {
@@ -79,8 +79,6 @@ public class Item {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-
-
 
     public Lote getLote() {
         return lote;
@@ -106,14 +104,6 @@ public class Item {
         this.valor_unitario = valor_unitario;
     }
 
-    public int getId_Item() {
-        return id_Item;
-    }
-
-    public void setId_Item(int id_Item) {
-        this.id_Item = id_Item;
-    }
-
     public List<Receita> getReceitas() {
         return receitas;
     }
@@ -129,9 +119,6 @@ public class Item {
     public void setItens_Fornecidos(List<Item_Fornecido> itens_Fornecidos) {
         this.itens_Fornecidos = itens_Fornecidos;
     }
-    
-    
-    
 
-  
+    
 }

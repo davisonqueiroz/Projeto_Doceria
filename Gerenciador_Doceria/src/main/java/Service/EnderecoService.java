@@ -26,7 +26,7 @@ public class EnderecoService {
             HttpClient client = HttpClient.newHttpClient();
             
             //Criação da requisição http
-            HttpRequest request = HttpRequest.newBuilder().uri(URI.create("viacep.com.br/ws/" + cep + "/json/")).build();
+            HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://viacep.com.br/ws/"+ cep +"/json/")).build();
             
             //Envia a requisição e seta o retorno como String
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());

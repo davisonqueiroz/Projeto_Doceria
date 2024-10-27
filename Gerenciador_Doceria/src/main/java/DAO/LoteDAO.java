@@ -3,6 +3,7 @@ package DAO;
 import Connection.ConnectFactory;
 import com.mycompany.model.Lote;
 import jakarta.persistence.EntityManager;
+import java.time.LocalDate;
 import java.util.List;
 
 public class LoteDAO {
@@ -66,6 +67,18 @@ public class LoteDAO {
         }
 
         return lote;
+    }
+    public Lote findByDate(LocalDate data){
+        
+       List<Lote> lotes = findAll();
+       for(Lote lote : lotes){
+           
+           if(lote.getData_Vencimento().equals(data)){
+               
+               return lote;
+           }
+       }
+        return null;
     }
 
     public List<Lote> findAll() {
