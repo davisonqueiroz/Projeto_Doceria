@@ -20,8 +20,8 @@ public class LoteService {
     public boolean verificarDuplicidade(LocalDate dtVencimento) {
 
         List<Lote> lotes = dao.findAll();
-        for(Lote lote : lotes){
-            if(lote.getData_Vencimento().equals(dtVencimento)){
+        for (Lote lote : lotes) {
+            if (lote.getData_Vencimento().equals(dtVencimento)) {
                 return true;
             }
         }
@@ -31,17 +31,17 @@ public class LoteService {
     public int salvarLote(LocalDate data) {
 
         if (!verificarDuplicidade(data)) {
-            
+
             Lote lote = new Lote();
             lote.setData_Vencimento(data);
             dao.save(lote);
-            
+
             return dao.findByDate(data).getId_Lote();
 
-        }else{
-            
+        } else {
+
             return dao.findByDate(data).getId_Lote();
-           
+
         }
 
     }
@@ -57,8 +57,9 @@ public class LoteService {
             if (itens.get(i).getLote().getId_Lote() == id) {
 
                 uso = true;
+                break;
             } else {
-                uso = true;
+                uso = false;
             }
         }
         return uso;
@@ -69,6 +70,7 @@ public class LoteService {
         if ((dao.findById(id_lote) != null) && (verificarUso(id_lote) == false)) {
 
             dao.delete(id_lote);
+            
         }
     }
 
@@ -93,5 +95,18 @@ public class LoteService {
 
     }
 
+    public int quantidadeDeUsos(int id) {
 
+        int cont = 0;
+        List<Item> itens = itemDao.findAll();
+        
+        for (int i = 0; i < itens.size(); i++) {
+
+            if (itens.get(i).getLote().getId_Lote() == id) {
+
+                cont++;
+            }
+        }
+        return cont;
+    }
 }
