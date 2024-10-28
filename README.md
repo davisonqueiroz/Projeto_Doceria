@@ -68,8 +68,8 @@ Este projeto ainda está em fase de desenvolvimento, tendo algumas funcionalidad
   - [ ] Filtragem 
 - [ ] Controle de estoque
   - [x] Formulário de inclusão 
-  - [ ] Inclusão de itens
-  - [ ] Exclusão de itens
+  - [x] Inclusão de itens
+  - [x] Exclusão de itens
   - [ ] Filtragem
   - [ ] Sistema de notificação referente ao estoque
 - [ ] Controle de vendas
