@@ -53,25 +53,6 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="57.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="570.0">
                      <children>
-                        <Label text="Celular: ">
-                           <HBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField maxWidth="-Infinity" prefHeight="25.0" prefWidth="30.0">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </TextField>
-                        <Label text="-">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="5.0" right="5.0" />
-                           </HBox.margin>
-                        </Label>
-                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="145.0" />
                         <Label text="Telefone: ">
                            <HBox.margin>
                               <Insets left="10.0" right="10.0" />
@@ -86,7 +67,12 @@
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField layoutX="118.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="145.0" />
+                        <TextField layoutX="118.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="155.0" />
+                        <ChoiceBox prefHeight="25.0" prefWidth="117.0">
+                           <HBox.margin>
+                              <Insets left="12.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="97.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="570.0">

@@ -44,16 +44,6 @@ public class Cliente {
     public Cliente(String nome) {
         this.nome = nome;
     }
-    
-    
-
-    public int getCod_Cliente() {
-        return id_Cliente;
-    }
-
-    public void setCod_Cliente(int cod_Cliente) {
-        this.id_Cliente = cod_Cliente;
-    }
 
     public String getNome() {
         return nome;
@@ -86,6 +76,22 @@ public class Cliente {
 
     public void setTelefones(List<TelefoneCliente> telefones) {
         this.telefones = telefones;
+    }
+
+    public int getId_Cliente() {
+        return id_Cliente;
+    }
+
+    public void setId_Cliente(int id_Cliente) {
+        this.id_Cliente = id_Cliente;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     

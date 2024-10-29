@@ -2,8 +2,10 @@
 package Service;
 
 import Connection.ConnectFactory;
+import DAO.ClienteDAO;
 import Enums.Unidade_Da_Federacao;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mycompany.model.Cliente;
 import com.mycompany.model.Endereco;
 import jakarta.persistence.EntityManager;
 import java.io.IOException;
@@ -160,5 +162,4 @@ public class EnderecoService {
         return enderecos;
     }
 
-    
 }

@@ -53,6 +53,23 @@ public class ClienteDAO {
         }
 
     }
+    
+    public Cliente findById(int id) {
+
+        em = new ConnectFactory().getConnect();
+        Cliente cliente = null;
+        try {
+            cliente = em.find(Cliente.class, id);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+
+            em.close();
+        }
+
+        return cliente;
+    }
 
     public List<Cliente> findByName(String nome) {
 
@@ -107,5 +124,27 @@ public class ClienteDAO {
 
             em.close();
         }
+    }
+    
+    public boolean verificarDuplicidade(String nome){
+        
+        int ocorrencias = 0;
+        boolean duplicidade = false;
+        List<Cliente> clientes = findAll();
+        
+        for(int i = 0; i < clientes.size(); i++){
+            
+            if(clientes.get(i).getNome().equals(nome)){
+                
+                ocorrencias++;
+            }
+        }
+        
+        if(ocorrencias > 1){
+            
+            duplicidade = true;
+        }
+        
+        return duplicidade;
     }
 }
