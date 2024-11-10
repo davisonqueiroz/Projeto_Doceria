@@ -45,7 +45,7 @@
                         <Insets left="15.0" right="10.0" top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="TxtClienteOrcamento" prefHeight="25.0" prefWidth="298.0">
+                  <TextField fx:id="txtFieldNomeProduto" prefHeight="25.0" prefWidth="298.0">
                      <HBox.margin>
                         <Insets right="30.0" />
                      </HBox.margin>
@@ -55,7 +55,7 @@
                         <Insets right="10.0" top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="TxtValUnitOrcamento1" prefHeight="25.0" prefWidth="119.0" />
+                  <TextField fx:id="txtFieldValProd" prefHeight="25.0" prefWidth="119.0" />
                </children>
                <VBox.margin>
                   <Insets top="10.0" />
@@ -90,18 +90,18 @@
                         <Insets left="15.0" right="10.0" top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="TxtProdOrcamento" prefHeight="25.0" prefWidth="206.0" />
+                  <TextField fx:id="txtFieldItemProd" prefHeight="25.0" prefWidth="206.0" />
                   <Label text="Quantidade: ">
                      <HBox.margin>
                         <Insets left="25.0" right="10.0" top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="TxtValUnitOrcamento" prefHeight="25.0" prefWidth="101.0">
+                  <TextField fx:id="txtFieldQtdItemProd" prefHeight="25.0" prefWidth="101.0">
                      <HBox.margin>
                         <Insets right="100.0" />
                      </HBox.margin>
                   </TextField>
-                  <ImageView fx:id="imgViewAdicionarProd" fitHeight="28.0" fitWidth="28.0" onMouseClicked="#adicionarProduto" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgViewAdicionarItem" fitHeight="28.0" fitWidth="28.0" onMouseClicked="#adicionarProduto" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets left="15.0" />
                      </HBox.margin>
@@ -109,7 +109,7 @@
                         <Image url="@../com/mycompany/icons/add.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="imgViewRemoverProd" fitHeight="28.0" fitWidth="28.0" layoutX="587.0" layoutY="10.0" onMouseClicked="#removerProduto" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgViewRemoverItem" fitHeight="28.0" fitWidth="28.0" layoutX="587.0" layoutY="10.0" onMouseClicked="#removerProduto" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -123,12 +123,12 @@
       </VBox>
       <HBox layoutX="23.0" layoutY="780.0" prefHeight="50.0" prefWidth="369.0" style="-fx-background-color: #FFE6FA;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="780.0">
          <children>
-            <Button fx:id="BtnLimparOrcamento" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Limpar">
+            <Button fx:id="btnLimparProd" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Limpar">
                <HBox.margin>
                   <Insets left="220.0" top="30.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="btnSalvarOrcamento" mnemonicParsing="false" onMouseClicked="#salvarOrcamento" prefHeight="40.0" prefWidth="100.0" text="Salvar">
+            <Button fx:id="btnSalvarProd" mnemonicParsing="false" onMouseClicked="#salvarOrcamento" prefHeight="40.0" prefWidth="100.0" text="Salvar">
                <HBox.margin>
                   <Insets left="40.0" top="30.0" />
                </HBox.margin>

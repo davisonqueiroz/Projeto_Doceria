@@ -48,7 +48,7 @@
                         <Insets left="15.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="TextFieldNomeItem" prefHeight="25.0" prefWidth="206.0">
+                  <TextField fx:id="txtFieldNomeItem" prefHeight="25.0" prefWidth="206.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -58,7 +58,7 @@
                         <Insets left="15.0" />
                      </padding>
                   </Label>
-                  <TextField fx:id="TextFieldMarca">
+                  <TextField fx:id="txtFieldMarca">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -75,7 +75,7 @@
                         <Insets left="15.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="TextFieldQtd" prefHeight="25.0" prefWidth="88.0">
+                  <TextField fx:id="txtFieldQtd" prefHeight="25.0" prefWidth="88.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -85,7 +85,7 @@
                         <Insets left="15.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="TextFieldValUnit" prefHeight="25.0" prefWidth="86.0">
+                  <TextField fx:id="txtFieldValUnit" prefHeight="25.0" prefWidth="86.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -99,12 +99,12 @@
                         <Insets left="15.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="TextFieldPeso" prefHeight="25.0" prefWidth="96.0">
+                  <TextField fx:id="txtFieldPesoUnit" prefHeight="25.0" prefWidth="96.0">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
                   </TextField>
-                  <ChoiceBox prefHeight="25.0" prefWidth="41.0">
+                  <ChoiceBox prefHeight="25.0" prefWidth="60.0">
                      <HBox.margin>
                         <Insets left="8.0" right="20.0" />
                      </HBox.margin>

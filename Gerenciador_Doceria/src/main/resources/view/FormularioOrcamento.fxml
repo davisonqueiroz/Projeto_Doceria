@@ -105,13 +105,13 @@
                         <Insets left="25.0" right="10.0" top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="TextFieldQtdOrcamento" prefHeight="25.0" prefWidth="63.0" />
+                  <TextField fx:id="txtFieldQtdOrc" prefHeight="25.0" prefWidth="63.0" />
                   <Label text="Valor Unit.:">
                      <HBox.margin>
                         <Insets left="25.0" right="10.0" top="3.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="TxtValUnitOrcamento" prefHeight="25.0" prefWidth="79.0" />
+                  <TextField fx:id="txtFieldValUnit" prefHeight="25.0" prefWidth="79.0" />
                   <ImageView fx:id="imgViewAdicionarProd" fitHeight="28.0" fitWidth="28.0" onMouseClicked="#adicionarProduto" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets left="15.0" />
