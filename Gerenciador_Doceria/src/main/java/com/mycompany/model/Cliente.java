@@ -21,61 +21,21 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cliente")
     private int id_Cliente;
+    
     @Column(name = "nome_cliente")
     private String nome;
     
-    @OneToMany(mappedBy = "cliente")
-    private List<EmailCliente> emails = new ArrayList();
-    
-    @OneToMany(mappedBy = "cliente")
-    private List<TelefoneCliente> telefones = new ArrayList();
-    
-    @OneToMany(mappedBy = "cliente")
-    private List<Pedido> pedidos = new ArrayList();
-    
     @OneToOne
-    @JoinColumn(name = "id_endereco")
-    private Endereco endereco;
+    @JoinColumn(name = "id_telefone")
+    private Telefone telefone;
 
     public Cliente() {
         
     }
 
-    public Cliente(String nome) {
+    public Cliente(String nome, Telefone telefone) {
         this.nome = nome;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-
-    public List<Pedido> getPedidos() {
-        return pedidos;
-    }
-
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
-    }
-
-    public List<EmailCliente> getEmails() {
-        return emails;
-    }
-
-    public void setEmails(List<EmailCliente> emails) {
-        this.emails = emails;
-    }
-
-    public List<TelefoneCliente> getTelefones() {
-        return telefones;
-    }
-
-    public void setTelefones(List<TelefoneCliente> telefones) {
-        this.telefones = telefones;
+        this.telefone = telefone;
     }
 
     public int getId_Cliente() {
@@ -86,12 +46,20 @@ public class Cliente {
         this.id_Cliente = id_Cliente;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
+    public String getNome() {
+        return nome;
     }
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Telefone getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(Telefone telefone) {
+        this.telefone = telefone;
     }
 
     

@@ -45,19 +45,20 @@ public class Pedido {
     @Column(nullable = true)
     private LocalDate data_entrega;
     
+    @Column(name = "valor_total")
+    private double valot_Total;
 
     public Pedido() {
         
     }
 
-    public Pedido(Cliente cliente, Status_Pedido status, Pagamento pagamento, LocalDate data_entrega) {
+    public Pedido(Cliente cliente, Status_Pedido status, Pagamento pagamento, LocalDate data_entrega, double valot_Total) {
         this.cliente = cliente;
         this.status = status;
         this.pagamento = pagamento;
         this.data_entrega = data_entrega;
+        this.valot_Total = valot_Total;
     }
-
-    
 
     public int getId_Pedido() {
         return id_Pedido;
@@ -107,6 +108,14 @@ public class Pedido {
         this.data_entrega = data_entrega;
     }
 
- 
+    public double getValot_Total() {
+        return valot_Total;
+    }
+
+    public void setValot_Total(double valot_Total) {
+        this.valot_Total = valot_Total;
+    }
+
+    
  
 }

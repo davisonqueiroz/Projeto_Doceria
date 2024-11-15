@@ -6,7 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,28 +25,27 @@ public class Fornecedor {
     @Column(name = "nome_forn")
     private String nome_Fornecedor;
     
-    @OneToMany(mappedBy = "fornecedor")
-    private List<EmailFornecedor> emails = new ArrayList();
+    @OneToOne
+    @JoinColumn(name = "id_telefone")
+    private Telefone telefone;
     
-    @OneToMany(mappedBy = "fornecedor")
-    private List<TelefoneFornecedor> telefones = new ArrayList();
+
 
     public Fornecedor() {
         
     }
 
-    public Fornecedor(String nome_Fornecedor) {
+    public Fornecedor(String nome_Fornecedor, Telefone telefone) {
         this.nome_Fornecedor = nome_Fornecedor;
+        this.telefone = telefone;
     }
-    
-    
 
-    public int getCod_Fornecedor() {
+    public int getId_Fornecedor() {
         return id_Fornecedor;
     }
 
-    public void setCod_Fornecedor(int cod_Fornecedor) {
-        this.id_Fornecedor = cod_Fornecedor;
+    public void setId_Fornecedor(int id_Fornecedor) {
+        this.id_Fornecedor = id_Fornecedor;
     }
 
     public String getNome_Fornecedor() {
@@ -55,25 +56,16 @@ public class Fornecedor {
         this.nome_Fornecedor = nome_Fornecedor;
     }
 
-    public List<EmailFornecedor> getEmails() {
-        return emails;
+    public Telefone getTelefone() {
+        return telefone;
     }
 
-    public void setEmails(List<EmailFornecedor> emails) {
-        this.emails = emails;
+    public void setTelefone(Telefone telefone) {
+        this.telefone = telefone;
     }
+    
+    
 
-    public List<TelefoneFornecedor> getTelefones() {
-        return telefones;
-    }
 
-    public void setTelefones(List<TelefoneFornecedor> telefones) {
-        this.telefones = telefones;
-    }
-
-   
-
-   
-   
 }
 

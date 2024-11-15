@@ -35,25 +35,29 @@ public class Pagamento {
    
     @OneToOne(mappedBy = "pagamento")
     private Pedido pedido;
+    
+    
+    private int desconto;
 
     public Pagamento() {
         
     }
 
-    public Pagamento(double valor_Total, Forma_De_Pagamento forma_Pagamento, boolean parcelar, int qtd_Parcelas, Pedido pedido) {
+    public Pagamento(double valor_Total, Forma_De_Pagamento forma_Pagamento, boolean parcelar, int qtd_Parcelas, Pedido pedido, int desconto) {
         this.valor_Total = valor_Total;
         this.forma_Pagamento = forma_Pagamento;
         this.parcelar = parcelar;
         this.qtd_Parcelas = qtd_Parcelas;
         this.pedido = pedido;
+        this.desconto = desconto;
     }
 
-    public int getCod_Pagamento() {
+    public int getId_Pagamento() {
         return id_Pagamento;
     }
 
-    public void setCod_Pagamento(int cod_Pagamento) {
-        this.id_Pagamento = cod_Pagamento;
+    public void setId_Pagamento(int id_Pagamento) {
+        this.id_Pagamento = id_Pagamento;
     }
 
     public double getValor_Total() {
@@ -96,5 +100,13 @@ public class Pagamento {
         this.pedido = pedido;
     }
 
-   
+    public int getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(int desconto) {
+        this.desconto = desconto;
+    }
+
+
 }

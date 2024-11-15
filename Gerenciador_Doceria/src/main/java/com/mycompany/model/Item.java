@@ -25,16 +25,21 @@ public class Item {
     private int id_Item;
     private String nome_Item;
     
-    private String marca;
+    @ManyToOne
+    @JoinColumn(name = "id_descricao")
+    private Descricao descricao;
     
-    //@ManyToMany(mappedBy = "itens")
-    //List<Produto> produtos = new ArrayList();
+    
+    private String marca;
+
     
     @ManyToOne
     @JoinColumn(name = "id_lote" )
     private Lote lote;
+    
     @Column(name = "qtd_item")
     private int quantidade;
+    
     @Column(name = "valor_unit_item")
     private double valor_unitario;
     
@@ -44,16 +49,20 @@ public class Item {
     @OneToMany(mappedBy = "item")
     private List<Item_Fornecido> itens_Fornecidos =  new ArrayList();
     
+    private int uso_Temporario;
+    
     public Item() {
         
     }
 
-    public Item(String nome_Item, String marca, Lote lote, int quantidade, double valor_unitario) {
+    public Item(String nome_Item, Descricao descricao, String marca, Lote lote, int quantidade, double valor_unitario) {
         this.nome_Item = nome_Item;
+        this.descricao = descricao;
         this.marca = marca;
         this.lote = lote;
         this.quantidade = quantidade;
         this.valor_unitario = valor_unitario;
+
     }
 
     public int getId_Item() {
@@ -70,6 +79,14 @@ public class Item {
 
     public void setNome_Item(String nome_Item) {
         this.nome_Item = nome_Item;
+    }
+
+    public Descricao getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(Descricao descricao) {
+        this.descricao = descricao;
     }
 
     public String getMarca() {
@@ -120,5 +137,13 @@ public class Item {
         this.itens_Fornecidos = itens_Fornecidos;
     }
 
-    
+    public int getUso_Temporario() {
+        return uso_Temporario;
+    }
+
+    public void setUso_Temporario(int uso_Temporario) {
+        this.uso_Temporario = uso_Temporario;
+    }
+
+   
 }
