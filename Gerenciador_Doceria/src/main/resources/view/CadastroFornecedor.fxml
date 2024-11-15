@@ -50,23 +50,6 @@
             </HBox>
             <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="570.0">
                <children>
-                  <Label text="E-mail: ">
-                     <HBox.margin>
-                        <Insets left="15.0" right="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="choiceBoxEmailForn" maxWidth="-Infinity" prefHeight="25.0" prefWidth="417.0">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="15.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="570.0">
-               <children>
                   <Label text="Telefone: ">
                      <HBox.margin>
                         <Insets left="15.0" right="10.0" />

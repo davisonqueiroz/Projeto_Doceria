@@ -1,8 +1,11 @@
 
 package com.mycompany.model;
 
+import Enums.Sexo;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,14 +31,19 @@ public class Cliente {
     @OneToOne
     @JoinColumn(name = "id_telefone")
     private Telefone telefone;
+    
+    @Column(name = "sexo")
+    @Enumerated(EnumType.STRING)
+    private Sexo sexo;
 
     public Cliente() {
         
     }
 
-    public Cliente(String nome, Telefone telefone) {
+    public Cliente(String nome, Telefone telefone, Sexo sexo) {
         this.nome = nome;
         this.telefone = telefone;
+        this.sexo = sexo;
     }
 
     public int getId_Cliente() {
@@ -62,6 +70,13 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    
+    public Sexo getSexo() {
+        return sexo;
+    }
 
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
+    }
+
+    
 }
