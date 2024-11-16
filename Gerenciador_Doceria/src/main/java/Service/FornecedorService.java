@@ -17,11 +17,15 @@ public class FornecedorService {
     public FornecedorService() {
     }
 
-    public void salvarFornecedor(Fornecedor fornecedor, Telefone telefone) {
+    public int salvarFornecedor(Fornecedor fornecedor, Telefone telefone) {
         
-        telDAO.save(telefone);
-        dao.save(fornecedor);
-
+        if(!(verificarRegistroSalvo(fornecedor.getNome_Fornecedor()))){
+            telDAO.save(telefone);
+            fornecedor.setTelefone(telefone);
+            dao.save(fornecedor);
+            return fornecedor.getId_Fornecedor();
+        }
+        return fornecedor.getId_Fornecedor();
     }
     
     public void deletarFornecedor(Fornecedor fornecedor){
@@ -40,5 +44,17 @@ public class FornecedorService {
         
         return dao.findAll();
         
+    }
+    
+    public boolean verificarRegistroSalvo(String nome){
+        
+        List<Fornecedor> forns = dao.findAll();
+        for(Fornecedor fornecedor : forns){
+            
+            if(fornecedor.getNome_Fornecedor().equals(nome)){
+                return true;
+            }
+        }
+        return false;
     }
 }
