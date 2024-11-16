@@ -14,6 +14,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,14 +46,14 @@ public class Pedido {
     @Column(nullable = true)
     private LocalDate data_entrega;
     
-    @Column(name = "valor_total")
-    private double valot_Total;
+    @Column(name = "valor_total",precision = 10, scale = 2)
+    private BigDecimal valot_Total;
 
     public Pedido() {
         
     }
 
-    public Pedido(Cliente cliente, Status_Pedido status, Pagamento pagamento, LocalDate data_entrega, double valot_Total) {
+    public Pedido(Cliente cliente, Status_Pedido status, Pagamento pagamento, LocalDate data_entrega, BigDecimal valot_Total) {
         this.cliente = cliente;
         this.status = status;
         this.pagamento = pagamento;
@@ -108,11 +109,11 @@ public class Pedido {
         this.data_entrega = data_entrega;
     }
 
-    public double getValot_Total() {
+    public BigDecimal getValot_Total() {
         return valot_Total;
     }
 
-    public void setValot_Total(double valot_Total) {
+    public void setValot_Total(BigDecimal valot_Total) {
         this.valot_Total = valot_Total;
     }
 

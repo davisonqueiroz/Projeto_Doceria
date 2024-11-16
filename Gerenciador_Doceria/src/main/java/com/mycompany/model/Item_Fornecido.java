@@ -9,6 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "item_fornecido")
@@ -27,14 +28,14 @@ public class Item_Fornecido {
     @JoinColumn(name = "id_item")
     private Item item;
     
-    @Column(name = "valor_forn")
-    private double valor;
+    @Column(name = "valor_forn",precision = 10, scale = 2)
+    private BigDecimal valor;
 
     public Item_Fornecido() {
         
     }
 
-    public Item_Fornecido(FornecedorItemId id, Fornecedor fornecedor, Item item, double valor) {
+    public Item_Fornecido(FornecedorItemId id, Fornecedor fornecedor, Item item, BigDecimal valor) {
         this.id = id;
         this.fornecedor = fornecedor;
         this.item = item;
@@ -65,11 +66,11 @@ public class Item_Fornecido {
         this.item = item;
     }
 
-    public double getValor() {
+    public BigDecimal getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
     

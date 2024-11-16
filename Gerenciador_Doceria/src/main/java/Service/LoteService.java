@@ -10,8 +10,8 @@ import java.util.List;
 
 public class LoteService {
 
-    LoteDAO dao = new LoteDAO();
-    ItemDAO itemDao = new ItemDAO();
+    private LoteDAO dao = new LoteDAO();
+    private ItemDAO itemDao = new ItemDAO();
 
     public LoteService() {
 
@@ -48,7 +48,6 @@ public class LoteService {
 
     public boolean verificarUso(int id) {
 
-        int cont = 0;
         boolean uso = false;
 
         List<Item> itens = itemDao.findAll();

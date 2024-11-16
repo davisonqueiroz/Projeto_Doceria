@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "pagamento")
@@ -21,8 +22,8 @@ public class Pagamento {
     @Column(name = "id_pagamento")
     private int id_Pagamento;
     
-    @Column(name = "valorTot_pgt")
-    private double valor_Total;
+    @Column(name = "valorTot_pgt",precision = 10, scale = 2)
+    private BigDecimal valor_Total;
     
     @Enumerated(EnumType.STRING)
     @Column(name = "forma_pagamento")
@@ -43,7 +44,7 @@ public class Pagamento {
         
     }
 
-    public Pagamento(double valor_Total, Forma_De_Pagamento forma_Pagamento, boolean parcelar, int qtd_Parcelas, Pedido pedido, int desconto) {
+    public Pagamento(BigDecimal valor_Total, Forma_De_Pagamento forma_Pagamento, boolean parcelar, int qtd_Parcelas, Pedido pedido, int desconto) {
         this.valor_Total = valor_Total;
         this.forma_Pagamento = forma_Pagamento;
         this.parcelar = parcelar;
@@ -60,11 +61,11 @@ public class Pagamento {
         this.id_Pagamento = id_Pagamento;
     }
 
-    public double getValor_Total() {
+    public BigDecimal getValor_Total() {
         return valor_Total;
     }
 
-    public void setValor_Total(double valor_Total) {
+    public void setValor_Total(BigDecimal valor_Total) {
         this.valor_Total = valor_Total;
     }
 
