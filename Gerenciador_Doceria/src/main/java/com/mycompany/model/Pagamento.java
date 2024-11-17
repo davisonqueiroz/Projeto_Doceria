@@ -44,6 +44,21 @@ public class Pagamento {
         
     }
 
+    public Pagamento(BigDecimal valor_Total, Forma_De_Pagamento forma_Pagamento, Pedido pedido) {
+        this.valor_Total = valor_Total;
+        this.forma_Pagamento = forma_Pagamento;
+        this.pedido = pedido;
+    }
+
+    public Pagamento(BigDecimal valor_Total, Forma_De_Pagamento forma_Pagamento, Pedido pedido, int desconto) {
+        this.valor_Total = valor_Total;
+        this.forma_Pagamento = forma_Pagamento;
+        this.pedido = pedido;
+        this.desconto = desconto;
+    }
+    
+    
+
     public Pagamento(BigDecimal valor_Total, Forma_De_Pagamento forma_Pagamento, boolean parcelar, int qtd_Parcelas, Pedido pedido, int desconto) {
         this.valor_Total = valor_Total;
         this.forma_Pagamento = forma_Pagamento;

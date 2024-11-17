@@ -26,7 +26,7 @@ public class ClienteService {
  
     }
     
-    public List<Cliente> buscarPorNome(String nome){
+    public Cliente buscarPorNome(String nome){
         
         return dao.findByName(nome);
     }

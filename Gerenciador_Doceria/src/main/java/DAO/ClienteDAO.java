@@ -71,13 +71,13 @@ public class ClienteDAO {
         return cliente;
     }
 
-    public List<Cliente> findByName(String nome) {
+    public Cliente findByName(String nome) {
 
         em = new ConnectFactory().getConnect();
-        List<Cliente> cliente = null;
+        Cliente cliente = null;
         try {
             cliente = em.createQuery("Cliente c where c.nome = :nome", Cliente.class).setParameter("nome", nome)
-                    .getResultList();
+                    .getSingleResult();
 
         } catch (Exception e) {
             e.printStackTrace();
