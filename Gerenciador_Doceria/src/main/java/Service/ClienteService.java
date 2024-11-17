@@ -2,9 +2,6 @@
 package Service;
 
 import DAO.ClienteDAO;
-import DAO.TelefoneDAO;
-
-import Enums.Tipo_Contato;
 import com.mycompany.model.Cliente;
 import com.mycompany.model.Telefone;
 import java.util.List;
@@ -13,18 +10,18 @@ import java.util.List;
 public class ClienteService {
 
     private ClienteDAO dao = new ClienteDAO();
-    private TelefoneDAO telDAO = new TelefoneDAO();
+    private TelefoneService telService = new TelefoneService();
 
     public void salvarCliente(Cliente cliente, Telefone telefone) {
         
-        telDAO.save(telefone);
+        telService.salvarTelefone(telefone);
         dao.save(cliente);
 
     }
     
     public void deletarCliente(Cliente cliente){
         
-        telDAO.delete(cliente.getTelefone().getId_Telefone());
+        telService.deletarTelefone(cliente.getTelefone().getId_Telefone());
         dao.delete(cliente.getId_Cliente());
  
     }

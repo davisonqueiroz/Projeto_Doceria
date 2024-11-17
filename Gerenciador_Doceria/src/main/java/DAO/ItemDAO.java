@@ -51,13 +51,12 @@ public class ItemDAO {
 
     }
 
-    public List<Item> findByName(String nome) {
+    public Item findById(int id) {
 
         em = new ConnectFactory().getConnect();
-        List<Item> item = null;
+        Item item = null;
         try {
-            item = em.createQuery("Item i where i.nome_Item = :nome", Item.class).setParameter("nome", nome)
-                    .getResultList();
+            item = em.find(Item.class, id);
 
         } catch (Exception e) {
             e.printStackTrace();

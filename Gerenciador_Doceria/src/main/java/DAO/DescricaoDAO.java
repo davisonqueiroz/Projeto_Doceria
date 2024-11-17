@@ -76,7 +76,7 @@ public class DescricaoDAO {
         em = new ConnectFactory().getConnect();
         Descricao desc = new Descricao();
         try {
-            desc = em.createQuery("Descricao d where d.nome = :nome", Descricao.class).setParameter("nome", descricao)
+            desc = em.createQuery("Descricao d where d.nome_Item = :nome", Descricao.class).setParameter("nome", descricao)
                     .getSingleResult();
 
         } catch (Exception e) {

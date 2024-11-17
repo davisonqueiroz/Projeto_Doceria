@@ -23,7 +23,6 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_item")
     private int id_Item;
-    private String nome_Item;
     
     @ManyToOne
     @JoinColumn(name = "id_descricao")
@@ -55,8 +54,8 @@ public class Item {
         
     }
 
-    public Item(String nome_Item, Descricao descricao, String marca, Lote lote, int quantidade, double valor_unitario) {
-        this.nome_Item = nome_Item;
+    public Item( Descricao descricao, String marca, Lote lote, int quantidade, double valor_unitario) {
+
         this.descricao = descricao;
         this.marca = marca;
         this.lote = lote;
@@ -73,13 +72,7 @@ public class Item {
         this.id_Item = id_Item;
     }
 
-    public String getNome_Item() {
-        return nome_Item;
-    }
 
-    public void setNome_Item(String nome_Item) {
-        this.nome_Item = nome_Item;
-    }
 
     public Descricao getDescricao() {
         return descricao;

@@ -2,7 +2,7 @@
 package Service;
 
 import DAO.FornecedorDAO;
-import DAO.TelefoneDAO;
+
 
 import com.mycompany.model.Fornecedor;
 import com.mycompany.model.Telefone;
@@ -12,7 +12,7 @@ import java.util.List;
 public class FornecedorService {
     
     private FornecedorDAO dao = new FornecedorDAO();
-    private TelefoneDAO telDAO = new TelefoneDAO();
+    private TelefoneService telService = new TelefoneService();
 
     public FornecedorService() {
     }
@@ -20,7 +20,7 @@ public class FornecedorService {
     public int salvarFornecedor(Fornecedor fornecedor, Telefone telefone) {
         
         if(!(verificarRegistroSalvo(fornecedor.getNome_Fornecedor()))){
-            telDAO.save(telefone);
+            telService.salvarTelefone(telefone);
             fornecedor.setTelefone(telefone);
             dao.save(fornecedor);
             return fornecedor.getId_Fornecedor();
@@ -30,7 +30,7 @@ public class FornecedorService {
     
     public void deletarFornecedor(Fornecedor fornecedor){
         
-        telDAO.delete(fornecedor.getTelefone().getId_Telefone());
+        telService.deletarTelefone(fornecedor.getTelefone().getId_Telefone());
         dao.delete(fornecedor.getId_Fornecedor());
  
     }

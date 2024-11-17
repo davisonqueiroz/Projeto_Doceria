@@ -54,9 +54,9 @@ public class ItemService {
         dao.delete(item.getId_Item());
     }
 
-    public List<Item> buscarPorNome(String nome) {
+    public Item buscarPorId(int id) {
 
-        return dao.findByName(nome);
+        return dao.findById(id);
     }
 
     public List<Item> bucarTodosItens() {
