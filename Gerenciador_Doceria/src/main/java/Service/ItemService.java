@@ -19,9 +19,11 @@ public class ItemService {
 
     public void salvarItem(Item item, LocalDate dtVencimento, Descricao descricao) {
 
+        System.out.println("inciando salvamento");
         int codLote = loteamento.salvarLote(dtVencimento);
         int codDesc = descService.salvarDescricao(descricao);
         Lote lote = new Lote();
+        System.out.println("descricao setada");
         Descricao desc = new Descricao();
         desc.setId_Descricao(codDesc);
         lote.setData_Vencimento(dtVencimento);
@@ -29,6 +31,8 @@ public class ItemService {
         item.setLote(lote);
         item.setDescricao(desc);
         dao.save(item);
+        System.out.println("salvo com sucesso");
+        System.out.println(dao.findById(item.getId_Item()));
 
     }
 

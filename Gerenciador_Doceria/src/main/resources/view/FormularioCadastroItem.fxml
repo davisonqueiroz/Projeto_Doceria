@@ -104,7 +104,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </TextField>
-                  <ChoiceBox prefHeight="25.0" prefWidth="60.0">
+                  <ChoiceBox fx:id="choiceBoxMedida" prefHeight="25.0" prefWidth="60.0">
                      <HBox.margin>
                         <Insets left="8.0" right="20.0" />
                      </HBox.margin>

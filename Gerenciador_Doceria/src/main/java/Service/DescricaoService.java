@@ -1,4 +1,3 @@
-
 package Service;
 
 import DAO.DescricaoDAO;
@@ -7,59 +6,59 @@ import com.mycompany.model.Descricao;
 import com.mycompany.model.Item;
 import java.util.List;
 
-
 public class DescricaoService {
-    
+
     private DescricaoDAO dao = new DescricaoDAO();
     private ItemDAO itemDao = new ItemDAO();
-    
-    public int salvarDescricao(Descricao descricao){
-        
-        if(!(verificarDuplicidade(descricao))){
+
+    public int salvarDescricao(Descricao descricao) {
+
+        System.out.println("verificando existencia");
+        if (!(verificarExistencia(descricao))) {
+            System.out.println("nao existe");
             dao.save(descricao);
             return descricao.getId_Descricao();
+        } else {
+            System.out.println("existe");
+            
+            return retornarId(descricao.getNome_Item());
+
         }
-            
-            return descricao.getId_Descricao();
-            
+
     }
-    
-    public void deletarDescricao( int id){
-        
-       if((dao.findById(id) != null) && (verificarUso(id)) == false){
-           
-           dao.delete(id);
-       }
- 
+
+    public void deletarDescricao(int id) {
+
+        if ((dao.findById(id) != null) && (verificarUso(id)) == false) {
+
+            dao.delete(id);
+        }
+
     }
-    
-    
-    
-    public Descricao buscarPorNome(String nome){
-        
+
+    public Descricao buscarPorNome(String nome) {
+
         return dao.findByName(nome);
     }
-    
-    public List<Descricao> buscarTodasDescricoes(){
-        
+
+    public List<Descricao> buscarTodasDescricoes() {
+
         return dao.findAll();
+
+    }
+
+    public boolean verificarExistencia(Descricao descricao) {
+
+        Descricao desc = buscarPorNome(descricao.getNome_Item());
+        return desc != null;
+    }
+
+    public int retornarId(String nome){
+        
+        Descricao descricao = buscarPorNome(nome);
+        return descricao.getId_Descricao();
         
     }
-    
-    public boolean verificarDuplicidade(Descricao descricao){
-        
-        List<Descricao> descs = dao.findAll();
-        for(Descricao desc: descs){
-            
-            if((desc.getNome_Item().equals(descricao.getNome_Item()))&& (desc.getPeso() == descricao.getPeso())){
-                
-                return true;
-            }
-        }
-        
-        return false;
-    }
-    
     public boolean verificarUso(int id) {
 
         boolean uso = false;

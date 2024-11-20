@@ -4,6 +4,8 @@ package DAO;
 import Connection.ConnectFactory;
 import com.mycompany.model.Descricao;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DescricaoDAO {
@@ -76,11 +78,11 @@ public class DescricaoDAO {
         em = new ConnectFactory().getConnect();
         Descricao desc = new Descricao();
         try {
-            desc = em.createQuery("Descricao d where d.nome_Item = :nome", Descricao.class).setParameter("nome", descricao)
+            desc = em.createQuery("FROM Descricao d where d.nome_Item = :nome", Descricao.class).setParameter("nome", descricao)
                     .getSingleResult();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (NoResultException e) {
+            return null;
         } finally {
 
             em.close();
@@ -95,7 +97,7 @@ public class DescricaoDAO {
         List<Descricao> descricoes = null;
 
         try {
-            descricoes = em.createQuery("from Cliente").getResultList();
+            descricoes = em.createQuery("from Descricao").getResultList();
             
         } catch (Exception e) {
             e.printStackTrace();

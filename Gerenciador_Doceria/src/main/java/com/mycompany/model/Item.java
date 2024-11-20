@@ -7,10 +7,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,8 +39,8 @@ public class Item {
     @Column(name = "qtd_item")
     private int quantidade;
     
-    @Column(name = "valor_unit_item")
-    private double valor_unitario;
+    @Column(name = "valor_unit_item",precision = 10, scale = 2)
+    private BigDecimal valor_unitario;
     
     @OneToMany(mappedBy = "item")
     private List<Receita> receitas = new ArrayList();
@@ -54,7 +54,7 @@ public class Item {
         
     }
 
-    public Item( Descricao descricao, String marca, Lote lote, int quantidade, double valor_unitario) {
+    public Item( Descricao descricao, String marca, Lote lote, int quantidade, BigDecimal valor_unitario) {
 
         this.descricao = descricao;
         this.marca = marca;
@@ -106,11 +106,11 @@ public class Item {
         this.quantidade = quantidade;
     }
 
-    public double getValor_unitario() {
+    public BigDecimal getValor_unitario() {
         return valor_unitario;
     }
 
-    public void setValor_unitario(double valor_unitario) {
+    public void setValor_unitario(BigDecimal valor_unitario) {
         this.valor_unitario = valor_unitario;
     }
 
