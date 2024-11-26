@@ -76,7 +76,7 @@ public class ClienteDAO {
         em = new ConnectFactory().getConnect();
         Cliente cliente = null;
         try {
-            cliente = em.createQuery("Cliente c where c.nome = :nome", Cliente.class).setParameter("nome", nome)
+            cliente = em.createQuery("from Cliente c where c.nome = :nome", Cliente.class).setParameter("nome", nome)
                     .getSingleResult();
 
         } catch (Exception e) {

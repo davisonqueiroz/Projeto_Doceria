@@ -13,13 +13,10 @@ public class DescricaoService {
 
     public int salvarDescricao(Descricao descricao) {
 
-        System.out.println("verificando existencia");
         if (!(verificarExistencia(descricao))) {
-            System.out.println("nao existe");
             dao.save(descricao);
             return descricao.getId_Descricao();
         } else {
-            System.out.println("existe");
             
             return retornarId(descricao.getNome_Item());
 
